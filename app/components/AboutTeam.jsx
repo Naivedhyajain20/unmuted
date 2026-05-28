@@ -1,11 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
-import { FaLinkedin, FaTwitter, FaTimes, FaGraduationCap, FaQuoteLeft, FaMicrophone } from "react-icons/fa";
+import { FaLinkedin, FaInstagram, FaTimes, FaGraduationCap, FaQuoteLeft, FaMicrophone } from "react-icons/fa";
 
 const teamMembers = [
   {
-    name: "Ananya Iyer",
+    name: "Shashwat Sharma",
     role: "Founder & Lead Facilitator",
     college: "SRCC, Delhi University",
     initials: "AI",
@@ -198,18 +198,18 @@ const AboutTeam = () => {
                   Founder & Lead Facilitator
                 </span>
                 <h3 className="text-2xl font-bold tracking-tight mb-1">
-                  Ananya Iyer
+                  Shashwat Sharma
                 </h3>
                 <p className="text-xs text-zinc-350 font-light">
-                  SRCC, Delhi University
+                  SOIT, RGPV University
                 </p>
               </div>
 
               {/* High-end Styled Abstract Avatar Image Box representing founder */}
               <div className="w-full h-full bg-gradient-to-br from-zinc-800 to-zinc-950 flex items-center justify-center select-none">
                 <div className="text-center">
-                  <div className="w-32 h-32 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-5xl font-light text-white mx-auto shadow-inner mb-4">
-                    AI
+                  <div className="w-32 h-32 rounded-full overflow-hidden bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center mx-auto shadow-inner mb-4">
+                    <img src="../found.jpeg" alt="Founder" className="w-full h-full object-cover" />
                   </div>
                   <span className="text-zinc-500 text-xs tracking-wider block">UNMUTEX PORTRAIT</span>
                 </div>
@@ -236,7 +236,7 @@ const AboutTeam = () => {
             <div className="flex flex-col sm:flex-row sm:items-center gap-6 pt-6 border-t border-zinc-100 dark:border-zinc-900">
               <div>
                 <h4 className="text-sm font-bold text-zinc-955 dark:text-white mb-0.5">
-                  Ananya Iyer
+                  Shashwat Sharma
                 </h4>
                 <p className="text-[11px] text-zinc-400 dark:text-zinc-500 font-medium">
                   Founder, Lead Coach & Facilitator
@@ -245,11 +245,11 @@ const AboutTeam = () => {
 
               {/* Social Links */}
               <div className="flex gap-3">
-                <a href="#" className="w-8 h-8 rounded-full bg-zinc-50 dark:bg-zinc-900 border border-zinc-200/60 dark:border-zinc-800 flex items-center justify-center text-zinc-500 hover:bg-zinc-955 hover:text-white dark:hover:bg-white dark:hover:text-zinc-950 transition duration-300">
+                <a href="https://www.linkedin.com/company/unmutex/?viewAsMember=true" className="w-8 h-8 rounded-full bg-zinc-50 dark:bg-zinc-900 border border-zinc-200/60 dark:border-zinc-800 flex items-center justify-center text-zinc-500 hover:bg-zinc-955 hover:text-white dark:hover:bg-white dark:hover:text-zinc-950 transition duration-300">
                   <FaLinkedin size={12} />
                 </a>
-                <a href="#" className="w-8 h-8 rounded-full bg-zinc-50 dark:bg-zinc-900 border border-zinc-200/60 dark:border-zinc-800 flex items-center justify-center text-zinc-500 hover:bg-zinc-955 hover:text-white dark:hover:bg-white dark:hover:text-zinc-950 transition duration-300">
-                  <FaTwitter size={12} />
+                <a href="https://www.instagram.com/25shashwatt/" className="w-8 h-8 rounded-full bg-zinc-50 dark:bg-zinc-900 border border-zinc-200/60 dark:border-zinc-800 flex items-center justify-center text-zinc-500 hover:bg-zinc-955 hover:text-white dark:hover:bg-white dark:hover:text-zinc-950 transition duration-300">
+                  <FaInstagram size={12} />
                 </a>
               </div>
             </div>

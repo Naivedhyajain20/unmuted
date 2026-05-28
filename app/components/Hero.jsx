@@ -112,7 +112,7 @@ const Hero = () => {
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up [animation-delay:450ms]">
           <a
-            href="#feedback"
+            href="https://chat.whatsapp.com/Ip7y9cyIgZs2QmzycEo2Bj"
             className="w-full sm:w-auto bg-zinc-950 dark:bg-white text-white dark:text-zinc-950 px-8 py-4 rounded-full text-sm font-semibold hover:bg-zinc-800 dark:hover:bg-zinc-100 hover:shadow-xl hover:shadow-zinc-950/10 transition-all active:scale-95 shadow-md flex items-center justify-center gap-2 cursor-pointer"
           >
             Join the UnmuteX Community

@@ -33,11 +33,14 @@ const Navbar = () => {
   return (
     <>
       <header className="fixed top-4 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-6xl z-50 rounded-full navbar-opaque shadow-md hover:shadow-lg transition-all duration-300">
-        <nav className="px-5 py-3 flex items-center justify-between">
+        <nav className="px-5 py-3 flex items-center justify-between bg-linear-to-r">
 
           {/* Logo */}
           <a href="#hero" className="flex items-center space-x-1.5 group cursor-pointer" onClick={() => setMenuOpen(false)}>
-            <span className="text-xl sm:text-2xl font-bold text-zinc-950 dark:text-white tracking-tight transition duration-300">
+            
+            <span className="text-xl sm:text-2xl font-bold text-zinc-950 dark:text-white tracking-tight transition duration-300 flex gap-2 justify-center items-center">
+              {theme == 'dark' && (<img src ='../darklogo.png' alt='' className='size-10'></img>)}
+              {theme == 'light' && (<img src ='../logoo.png' alt='' className='size-10'></img>)}
               Unmute<span className="text-zinc-500 group-hover:text-white dark:group-hover:text-white transition duration-300">X</span>
             </span>
             <div className="w-1.5 h-1.5 rounded-full bg-zinc-900 dark:bg-white group-hover:bg-zinc-400 transition duration-300"></div>
@@ -78,7 +81,7 @@ const Navbar = () => {
 
             {/* Get Started — hidden on very small, visible sm+ */}
             <a
-              href="#feedback"
+              href="https://chat.whatsapp.com/Ip7y9cyIgZs2QmzycEo2Bj"
               className="hidden sm:inline-flex bg-zinc-950 dark:bg-white text-white dark:text-zinc-950 text-xs font-semibold px-4 py-2.5 rounded-full hover:bg-zinc-800 dark:hover:bg-zinc-100 transition-all active:scale-95 shadow-sm hover:shadow-md cursor-pointer"
             >
               Get started
@@ -118,7 +121,7 @@ const Navbar = () => {
             ))}
             <div className="mt-2 pt-4 border-t border-zinc-100 dark:border-zinc-800">
               <a
-                href="#feedback"
+                href="https://chat.whatsapp.com/Ip7y9cyIgZs2QmzycEo2Bj"
                 onClick={() => setMenuOpen(false)}
                 className="w-full flex items-center justify-center bg-zinc-950 dark:bg-white text-white dark:text-zinc-950 font-semibold text-sm px-5 py-3.5 rounded-2xl hover:bg-zinc-800 dark:hover:bg-zinc-100 transition-all active:scale-95 shadow-sm"
               >

@@ -20,7 +20,7 @@ const Footer = () => {
         {/* Social Icons */}
         <div className="flex items-center gap-3">
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/25shashwatt/"
             target="_blank"
             rel="noopener noreferrer"
             className="w-10 h-10 rounded-full bg-white dark:bg-zinc-900 border border-zinc-200/60 dark:border-zinc-800/80 flex items-center justify-center text-zinc-500 dark:text-zinc-400 hover:bg-zinc-955 dark:hover:bg-white hover:text-white dark:hover:text-zinc-950 hover:-translate-y-0.5 transition-all duration-300 shadow-xs cursor-pointer"
@@ -30,7 +30,7 @@ const Footer = () => {
           </a>
 
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/company/unmutex/?viewAsMember=true"
             target="_blank"
             rel="noopener noreferrer"
             className="w-10 h-10 rounded-full bg-white dark:bg-zinc-900 border border-zinc-200/60 dark:border-zinc-800/80 flex items-center justify-center text-zinc-500 dark:text-zinc-400 hover:bg-zinc-955 dark:hover:bg-white hover:text-white dark:hover:text-zinc-950 hover:-translate-y-0.5 transition-all duration-300 shadow-xs cursor-pointer"
@@ -40,7 +40,7 @@ const Footer = () => {
           </a>
 
           <a
-            href="https://wa.me/919999999999"
+            href="https://chat.whatsapp.com/Ip7y9cyIgZs2QmzycEo2Bj"
             target="_blank"
             rel="noopener noreferrer"
             className="w-10 h-10 rounded-full bg-white dark:bg-zinc-900 border border-zinc-200/60 dark:border-zinc-800/80 flex items-center justify-center text-zinc-500 dark:text-zinc-400 hover:bg-zinc-955 dark:hover:bg-white hover:text-white dark:hover:text-zinc-955 hover:-translate-y-0.5 transition-all duration-300 shadow-xs cursor-pointer"

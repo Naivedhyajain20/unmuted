@@ -25,7 +25,25 @@ const testimonials = [
     quote:
       "The live practice sessions changed everything. Being surrounded by supportive peers who are all trying to grow made me speak without hesitation.",
   },
+  {
+    id: 4,
+    name: "Sonali",
+    role: "College Student",
+    video: "/videos/sonali.mp4",
+    quote:
+      "The live practice sessions changed everything. Being surrounded by supportive peers who are all trying to grow made me speak without hesitation.",
+  },
+  {
+    id: 5,
+    name: "Akriti",
+    role: "College Student",
+    video: "/videos/akriti.mp4",
+    quote:
+      "The live practice sessions changed everything. Being surrounded by supportive peers who are all trying to grow made me speak without hesitation.",
+  },
+  
 ];
+
 
 const Testimonials = () => {
   return (
@@ -51,12 +69,12 @@ const Testimonials = () => {
         </div>
 
         {/* Pinterest-Style Masonry Grid */}
-        <div className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8 w-full max-w-4xl mx-auto">
+        <div className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8 w-full max-w-4xl mx-auto ">
 
           {testimonials.map((item, index) => (
             <div
               key={item.id}
-              className="break-inside-avoid block w-full max-w-[290px] mx-auto rounded-[2.5rem] overflow-hidden hover:shadow-lg hover:-translate-y-2 transition-all duration-500 animate-fade-in-up mb-8 liquid-glass"
+              className="break-inside-avoid block w-full max-w-[290px] h-200 overflow-auto mx-auto rounded-[2.5rem]  hover:shadow-lg hover:-translate-y-2 transition-all duration-500 animate-fade-in-up mb-8 liquid-glass"
               style={{ animationDelay: `${index * 150}ms` }}
             >
 
@@ -71,7 +89,7 @@ const Testimonials = () => {
                   <source src={item.video} type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
-                
+
                 {/* Visual Label */}
                 <div className="absolute top-4 right-4 bg-black/40 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10 text-[10px] font-bold text-white uppercase tracking-wider select-none pointer-events-none">
                   Student Review
