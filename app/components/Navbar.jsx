@@ -28,6 +28,7 @@ const Navbar = () => {
     { href: "#features", label: "Features" },
     { href: "#testimonials", label: "Testimonials" },
     { href: "#feedback-list", label: "Feedback" },
+    { href: "#whofor", label: "Glimpses" },
   ];
 
   return (
