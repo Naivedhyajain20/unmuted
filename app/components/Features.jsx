@@ -119,7 +119,7 @@ const Features = () => {
                       <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
                     </span>
                     <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest">
-                      Live Tonight — 8:00 PM
+                      Every Day Live at 8 PM
                     </span>
                   </div>
 
@@ -129,17 +129,17 @@ const Features = () => {
                   </h3>
 
                   <p className="text-zinc-400 text-sm font-medium">
-                    47 members joined · Starting shortly
+                    5000+ members joined · Join to Get Started
                   </p>
                 </div>
               </div>
 
               <div className="flex items-center">
                 <a
-                  href="#feedback"
+                  href="https://chat.whatsapp.com/Ip7y9cyIgZs2QmzycEo2Bj"
                   className="w-full md:w-auto bg-white text-zinc-950 px-8 py-4 rounded-full text-sm font-semibold hover:bg-zinc-100 hover:shadow-lg active:scale-95 transition-all text-center cursor-pointer shadow-md inline-block"
                 >
-                  Join Live Session
+                  Join Community
                 </a>
               </div>
 
