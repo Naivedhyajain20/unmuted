@@ -20,7 +20,7 @@ const teamMembers = [
     college: "IIT Delhi",
     initials: "KM",
     color: "bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/20",
-    bio: "Kabir runs our advanced debate batches. He helps members structure logical flow under high pressure.",
+    bio: "Hii, my name is Vivek and I am a BCA graduate.Being a part of UnmuteX has genuinely helped me improve my communication skills, self-confidence, and the way I structure my thoughts while speaking. The community sessions are engaging, interactive, and full of supportive people who genuinely encourage growth.really enjoy being a part of this community and I’m looking forward to staying consistent and growing even more with the team.",
     tagline: "Structure your thoughts, command the room.",
     image: '../vivek.jpeg'
   },
@@ -30,7 +30,7 @@ const teamMembers = [
     college: "St. Stephen's College",
     initials: "RS",
     color: "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20",
-    bio: "Riya handles peer matching and onboarding circles, making sure every new joiner finds a comfortable circle.",
+    bio: "Hii Myself Naivedhya Jain And Being a part of UnmuteX it has been a wonderful experience. In just a few weeks, I’ve noticed a positive change in my confidence and communication skills. The best part is the supportive and motivating environment, where everyone gets the chance to learn and improve. I’m grateful to be a part of this community and look forward to growing even more.",
     tagline: "Belonging precedes confidence.",
     image: '../naivedya.jpeg'
   },
@@ -40,7 +40,7 @@ const teamMembers = [
     college: "BITS Pilani",
     initials: "DP",
     color: "bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/20",
-    bio: "Devansh designed the matching algorithm and runs the platform dashboard that schedules community sessions.",
+    bio: "Joining UnmuteX has genuinely helped me grow as a communicator. Over time, I’ve noticed a big improvement in my confidence, articulation, and the way I express my thoughts. Earlier, I used to hesitate while speaking, but this community gave me a comfortable space to practice and improve consistently. The sessions, interactions, and supportive environment really pushed me to become more confident in conversations and public speaking. Grateful to be part of such a positive learning community.",
     tagline: "Code that empowers community voices.",
     image: '../nik.png'
   },
@@ -50,7 +50,7 @@ const teamMembers = [
     college: "NID Ahmedabad",
     initials: "ID",
     color: "bg-purple-500/10 text-purple-600 dark:text-purple-400 border-purple-500/20",
-    bio: "Ishaan is behind the sleek visual language and modern slide decks that guide our live speaking circles.",
+    bio: "Hello, I am Akriti.Being a part of the UnmuteX community has greatly improved my confidence and speaking skills. The environment here is so friendly and encouraging that I never felt judged while expressing my thoughts and opinions. This platform has helped me become more confident, articulate, and comfortable while speaking in front of others. I am truly grateful to this community for helping me grow both personally and professionally.",
     tagline: "Good design makes hard skills approachable.",
     image: '../akriti.jpeg'
   },
@@ -60,7 +60,7 @@ const teamMembers = [
     college: "Ashoka University",
     initials: "ZK",
     color: "bg-teal-500/10 text-teal-600 dark:text-teal-400 border-teal-500/20",
-    bio: "Zara leads the coach-to-student pairing system and tracks regular feedback card delivery.",
+    bio: "UnmuteX has helped me improve my communication skills, self confidence and structuring my thoughts properly. The community sessions are amazing, people are really considerate and supportive. Loved to be a part of the team and will stay consistent with it!",
     tagline: "Constructive feedback heals stage anxiety.",
     image: '../chavi.jpeg'
   },
@@ -70,7 +70,7 @@ const teamMembers = [
     college: "Lady Shri Ram College",
     initials: "MN",
     color: "bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border-indigo-500/20",
-    bio: "Meera curates the daily speech prompts and coordinates with schools and colleges for live outreach activities.",
+    bio: "Hii my name is Grita Lamba Unmute X has helped me improve my confidence and communication skills . Everyome is so cooperative and encouragin here .enjoy being the part of this community",
     tagline: "Fun prompts break ice faster than advice.",
     image: '../gritha.jpeg'
   },
@@ -147,9 +147,7 @@ const AboutTeam = () => {
 
         {/* Role pill — top left */}
         <div className="absolute top-3 left-3">
-          <span className="text-[8px] uppercase tracking-widest font-bold px-2.5 py-1 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/80">
-            {member.role.split('&')[0].trim()}
-          </span>
+          
         </div>
 
         {/* Voice bars — bottom of image, subtle */}
@@ -176,9 +174,7 @@ const AboutTeam = () => {
 
       {/* Footer strip — college tag */}
       <div className="px-4 py-2.5 flex items-center justify-between bg-white dark:bg-zinc-900 border-t border-zinc-100 dark:border-zinc-800/60">
-        <span className="text-[9px] text-zinc-400 dark:text-zinc-500 font-medium tracking-wide truncate">
-          {member.college}
-        </span>
+      
         <span className="text-[8px] uppercase font-bold tracking-widest text-zinc-300 dark:text-zinc-700 ml-2 shrink-0">
           View ↗
         </span>
@@ -395,7 +391,7 @@ const AboutTeam = () => {
 
                   <div className="space-y-2">
                     <span className="text-[10px] font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-widest block">
-                      Role & Direct Impact
+                      Journey and Feedback
                     </span>
                     <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 font-light leading-relaxed">
                       {selectedMember.bio}

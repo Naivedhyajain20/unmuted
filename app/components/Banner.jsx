@@ -12,7 +12,7 @@ const Banner = () => {
                         <span className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-zinc-950 dark:text-white flex items-center justify-center">
                             <CountUp
                                 from={0}
-                                to={5000}
+                                to={6000}
                                 separator=","
                                 direction="up"
                                 duration={1.2}
