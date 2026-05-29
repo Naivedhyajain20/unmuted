@@ -65,7 +65,7 @@ const teamMembers = [
     image: '../chavi.jpeg'
   },
   {
-    name: "Gritha",
+    name: "Grita",
     role: "Workshop Director",
     college: "Lady Shri Ram College",
     initials: "MN",
@@ -287,7 +287,7 @@ const AboutTeam = () => {
           <div className=" lg:grid-cols-[1fr_auto_1fr] gap-8 lg:gap-4 items-start max-w-2xl mx-auto">
 
             {/* LEFT: 3 cards stacked */}
-            <div className="flex  gap-5">
+            <div className="flex flex-col md:flex-row gap-5">
               {leftMembers.map((member, idx) => (
                 <MemberCard key={member.name} member={member} idx={idx} />
               ))}
@@ -337,7 +337,7 @@ const AboutTeam = () => {
             </div>
 
             {/* RIGHT: 3 cards stacked */}
-            <div className="flex  gap-5">
+            <div className="flex flex-col md:flex-row  gap-5">
               {rightMembers.map((member, idx) => (
                 <MemberCard key={member.name} member={member} idx={idx} />
               ))}
