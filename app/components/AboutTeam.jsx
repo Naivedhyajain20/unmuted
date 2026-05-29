@@ -169,7 +169,7 @@ const AboutTeam = () => {
             {member.name}
           </h4>
           <p className="text-[10px] text-white/60 font-light leading-snug line-clamp-1 italic">
-            "{member.tagline}"
+            &quot;{member.tagline}&quot;
           </p>
         </div>
       </div>
@@ -238,10 +238,10 @@ const AboutTeam = () => {
           <div className="lg:col-span-7 space-y-6 sm:space-y-8 animate-fade-in-up" style={{ animationDelay: "200ms" }}>
             <div>
               <span className="text-[10px] uppercase font-bold tracking-widest text-zinc-400 dark:text-zinc-500 block mb-3">
-                Founder's Story
+                {"Founder's Story"}
               </span>
-              <h3 className="text-3xl sm:text-4xl font-bold text-zinc-950 dark:text-white tracking-tight mb-4 leading-snug">
-                "We aren't here to teach you to be perfect. We are here to help you be real."
+              <h3 className="text-3xl sm:text-4xl font-bold text-zinc-955 dark:text-white tracking-tight mb-4 leading-snug">
+                {"\"We aren't here to teach you to be perfect. We are here to help you be real.\""}
               </h3>
               <p className="text-zinc-650 dark:text-zinc-400 text-sm sm:text-base font-light leading-relaxed mb-6">
                 UnmuteX was born from a very raw realization. Traditional speaking courses throw you into high-pressure setups or focus too much on vocabulary rules and posture. For someone struggling with hand shivering or social stutter, that is terrifying.
@@ -389,7 +389,7 @@ const AboutTeam = () => {
                   <div className="bg-zinc-50/50 dark:bg-zinc-955/20 border border-zinc-100 dark:border-zinc-850 rounded-2xl p-4 my-5 relative">
                     <FaQuoteLeft className="text-zinc-200/50 dark:text-zinc-800/40 absolute top-3 left-3" size={16} />
                     <blockquote className="relative z-10 pl-5 text-zinc-650 dark:text-zinc-350 text-[13px] font-light italic leading-relaxed">
-                      "{selectedMember.tagline}"
+                      &quot;{selectedMember.tagline}&quot;
                     </blockquote>
                   </div>
 

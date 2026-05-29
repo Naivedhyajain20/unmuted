@@ -7,8 +7,11 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const isDark = document.documentElement.classList.contains("dark");
-    setTheme(isDark ? "dark" : "light");
+    const timer = setTimeout(() => {
+      const isDark = document.documentElement.classList.contains("dark");
+      setTheme(isDark ? "dark" : "light");
+    }, 0);
+    return () => clearTimeout(timer);
   }, []);
 
   const toggleTheme = () => {
@@ -38,13 +41,12 @@ const Navbar = () => {
 
           {/* Logo */}
           <a href="#hero" className="flex items-center space-x-1.5 group cursor-pointer" onClick={() => setMenuOpen(false)}>
-            
-            <span className="text-xl sm:text-2xl font-bold text-zinc-950 dark:text-white tracking-tight transition duration-300 flex gap-2 justify-center items-center">
-              {theme == 'dark' && (<img src ='../darklogo.png' alt='' className='size-10'></img>)}
-              {theme == 'light' && (<img src ='../logoo.png' alt='' className='size-10'></img>)}
-              Unmute<span className="text-zinc-500 group-hover:text-white dark:group-hover:text-white transition duration-300">X</span>
+
+            <span className="text-xl sm:text-2xl font-bold text-zinc-950 dark:text-white tracking-tight transition duration-300 flex gap-0 justify-center items-center">
+              {theme == 'dark' && (<img src='../darklogo.png' alt='' className='size-10'></img>)}
+              {theme == 'light' && (<img src='../logoo.png' alt='' className='size-10'></img>)}
+              Unmute<span className="text-zinc-500 group-hover:text-black dark:group-hover:text-white transition duration-300">X</span>
             </span>
-            <div className="w-1.5 h-1.5 rounded-full bg-zinc-900 dark:bg-white group-hover:bg-zinc-400 transition duration-300"></div>
           </a>
 
           {/* Desktop Links */}

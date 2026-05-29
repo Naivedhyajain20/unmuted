@@ -81,11 +81,13 @@ const Feedback = ({ onSuccess }) => {
   };
 
   return (
-    <section id="feedback" className="bg-white dark:bg-zinc-950 py-16 px-6 border-b border-zinc-100/60 dark:border-zinc-900/60 transition-colors duration-300">
+    <section
+      id="feedback"
+      className="bg-white dark:bg-zinc-950 py-16 px-6 border-b border-zinc-100/60 dark:border-zinc-900/60 transition-colors duration-300"
+    >
       <Toaster position="top-right" />
 
       <div className="max-w-7xl mx-auto">
-
         {/* Form Container */}
         <div className="max-w-2xl mx-auto bg-white dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800/80 rounded-[2.5rem] p-10 md:p-12 shadow-[0_30px_70px_rgba(0,0,0,0.015)] dark:shadow-[0_30px_70px_rgba(0,0,0,0.4)]">
           <div className="mb-8">
@@ -98,7 +100,6 @@ const Feedback = ({ onSuccess }) => {
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">
-
             {/* Name and Role Input Group */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div>
@@ -130,7 +131,6 @@ const Feedback = ({ onSuccess }) => {
 
             {/* Interactive Stars Selector & Photo Upload Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 items-center bg-zinc-50/50 dark:bg-zinc-950/40 p-6 rounded-2xl border border-zinc-100/50 dark:border-zinc-800/60">
-
               {/* Star Rating Selection */}
               <div>
                 <label className="block text-[10px] font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-wider mb-2">
@@ -147,10 +147,11 @@ const Feedback = ({ onSuccess }) => {
                       className="text-2xl focus:outline-none transition-transform duration-100 hover:scale-110 active:scale-95"
                     >
                       <svg
-                        className={`w-6 h-6 ${star <= (hoverRating || rating)
+                        className={`w-6 h-6 ${
+                          star <= (hoverRating || rating)
                             ? "text-amber-400 fill-amber-400"
                             : "text-zinc-200 dark:text-zinc-800"
-                          }`}
+                        }`}
                         viewBox="0 0 24 24"
                         fill="currentColor"
                       >
@@ -202,7 +203,6 @@ const Feedback = ({ onSuccess }) => {
                   )}
                 </div>
               </div>
-
             </div>
 
             {/* Feedback Message Input */}
@@ -233,10 +233,8 @@ const Feedback = ({ onSuccess }) => {
                 )}
               </button>
             </div>
-
           </form>
         </div>
-
       </div>
     </section>
   );
