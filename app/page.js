@@ -46,18 +46,20 @@ export default function Home() {
         <Banner />
       </div>
       {/* Starting Section: Meet the Founder & Core Team */}
-      <div className="reveal-on-scroll">
-        <AboutTeam />
+       <div className="reveal-on-scroll">
+        <Features />
       </div>
+      
       {/* Visual Impact Steps Roadmap */}
       <div className="reveal-on-scroll">
         <JourneySteps />
       </div>
-      <div className="reveal-on-scroll">
+      {/* <div className="reveal-on-scroll">
         <Problem />
-      </div>
+      </div> */}
+     
       <div className="reveal-on-scroll">
-        <Features />
+        <AboutTeam />
       </div>
       <div className="reveal-on-scroll">
         <WhoFor />
