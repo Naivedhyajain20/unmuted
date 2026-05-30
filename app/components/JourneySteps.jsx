@@ -57,7 +57,7 @@ export default function JourneySteps() {
   const [activeIndex, setActiveIndex] = useState(null);
 
   return (
-    <section className="w-full pt-16 px-6">
+    <section className="w-full pt-16 px-6 ">
       <div className="max-w-4xl mx-auto">
 
         {/* Header */}

@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { FaLinkedin, FaInstagram, FaQuoteLeft, FaChevronRight } from "react-icons/fa";
+import JourneySteps from './JourneySteps'
 
 const teamMembers = [
   {
@@ -131,7 +132,7 @@ const AboutTeam = () => {
   }, []);
 
   return (
-    <section className="bg-zinc-950 text-white py-24 px-6 overflow-hidden relative border-b border-zinc-900">
+    <section className="dark:bg-zinc-950 dark:text-white  py-24 px-6 overflow-hidden relative border-b border-zinc-900">
 
       {/* Dynamic Soundwaves background decorative overlay */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.02),transparent_70%)] pointer-events-none" />
@@ -175,7 +176,7 @@ const AboutTeam = () => {
               <h3 className="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-4 leading-snug">
                 &quot;Hi, I&apos;m Shashwat.&quot;
               </h3>
-              <p className="text-zinc-400 text-sm sm:text-base font-light leading-relaxed mb-6">
+              <p className="dark:text-zinc-400 text-gray-600 text-sm sm:text-base font-light leading-relaxed mb-6">
                 There was a time when I knew exactly what I wanted to say, but couldn&apos;t express it confidently.
                 Like many students, I struggled with hesitation, overthinking, and the fear of being judged.
                 Even when I had ideas, I often stayed silent because I wasn&apos;t confident enough to speak up.
@@ -223,6 +224,9 @@ const AboutTeam = () => {
           </div>
 
         </div>
+        <div className="reveal-on-scroll">
+        <JourneySteps />
+      </div>
 
         {/* 2. THE CHAMELEON PORTRAIT STAGE (THEME INSPIRED BY THE ATTACHED DESIGN MOCKUP) */}
         <div className="mt-20 pt-16 border-t border-zinc-900">
@@ -231,16 +235,22 @@ const AboutTeam = () => {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-end mb-16 max-w-6xl mx-auto">
             <div className="md:col-span-8 space-y-2">
               <span className="text-[10px] uppercase font-bold tracking-[0.3em] text-zinc-500 block">
-                [ OUR TEAM ]
+                [ MEMBER SPOTLIGHT ]
               </span>
+
+              <p className="text-lg uppercase tracking-[0.2em] text-zinc-400 font-medium">
+                They started just like you.
+              </p>
+
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter uppercase leading-none">
-                The people <br />
-                BEHIND UNMUTEX
+                Voices that <br />
+                GREW WITH UNMUTEX
               </h2>
             </div>
+
             <div className="md:col-span-4 text-left md:text-right">
-              <p className="text-zinc-400 text-xs sm:text-sm font-light max-w-xs md:ml-auto leading-relaxed">
-                Our team is a mix of public speaking champions, debate coaches, and creative minds who design immersive voice experiences.
+              <p className="text-gray-700 dark:text-zinc-400 text-xs sm:text-sm font-light max-w-xs md:ml-auto leading-relaxed">
+                Meet members who stayed consistent, embraced every challenge, and transformed their communication skills through practice and persistence.
               </p>
             </div>
           </div>
@@ -338,9 +348,7 @@ const AboutTeam = () => {
                         {member.name}
                       </h4>
 
-                      <p className={`text-[9.5px] font-bold uppercase tracking-wider ${member.textColor} leading-tight`}>
-                        {member.role}
-                      </p>
+
 
                       {/* Expandable details showing ONLY at the bottom of the card on hover/focus */}
                       <div
