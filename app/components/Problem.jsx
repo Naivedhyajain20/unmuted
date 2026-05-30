@@ -19,9 +19,9 @@ const Problem = () => {
           </h2>
 
           <p className="text-base sm:text-lg text-zinc-500 dark:text-zinc-400 font-light leading-relaxed">
-            Whether you're a working professional passed over for a promotion,
+            Whether {"you're"} a working professional passed over for a promotion,
             a college student terrified of interviews, or a founder struggling
-            to pitch — the problem isn't your intelligence.
+            to pitch — the problem {"isn't"} your intelligence.
           </p>
         </div>
 
@@ -41,7 +41,7 @@ const Problem = () => {
             </h3>
 
             <p className="text-zinc-500 dark:text-zinc-400 font-light leading-relaxed text-sm">
-              You stay quiet in meetings and conversations because you're scared of making mistakes or sounding foolish in public.
+              You stay quiet in meetings and conversations because {"you're"} scared of making mistakes or sounding foolish in public.
             </p>
           </div>
 
@@ -83,8 +83,8 @@ const Problem = () => {
 
         {/* Bottom Statement */}
         <div className="mt-12 text-center max-w-2xl mx-auto">
-          <p className="text-2xl sm:text-3xl font-semibold tracking-tight text-zinc-950 dark:text-white leading-snug">
-            You don't need another boring English grammar tutor.
+          <p className="text-2xl sm:text-3xl font-semibold tracking-tight text-zinc-955 dark:text-white leading-snug">
+            You {"don't"} need another boring English grammar tutor.
           </p>
 
           <p className="text-base text-zinc-500 dark:text-zinc-400 font-light leading-relaxed mt-4">

@@ -168,7 +168,7 @@ const AboutTeam = () => {
             {member.name}
           </h4>
           <p className="text-[10px] text-white/60 font-light leading-snug line-clamp-1 italic">
-            "{member.tagline}"
+            &quot;{member.tagline}&quot;
           </p>
         </div>
       </div>

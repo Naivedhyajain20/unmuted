@@ -1,7 +1,39 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import CountUp from '../packages/CountUp'
 
 const Banner = () => {
+    const [prevCount, setPrevCount] = useState(0);
+    const [followerCount, setFollowerCount] = useState(6733);
+
+    useEffect(() => {
+        let isMounted = true;
+
+        const updateCount = () => {
+            fetch(`/api/instagram?t=${Date.now()}`)
+                .then(res => res.json())
+                .then(data => {
+                    if (isMounted && data.followers) {
+                        setFollowerCount(prev => {
+                            setPrevCount(prev);
+                            return data.followers;
+                        });
+                    }
+                })
+                .catch(err => console.error("Instagram count sync error:", err));
+        };
+
+        // Initial fetch
+        updateCount();
+
+        // Real-time polling every 15 seconds to sync dynamically!
+        const intervalId = setInterval(updateCount, 15000);
+
+        return () => {
+            isMounted = false;
+            clearInterval(intervalId);
+        };
+    }, []);
+
     return (
         <section className="relative bg-white dark:bg-zinc-950 py-16 px-6 overflow-hidden transition-colors duration-300">
             <div className="max-w-6xl mx-auto">
@@ -11,8 +43,8 @@ const Banner = () => {
                     <div className="flex flex-col items-center justify-center px-4">
                         <span className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-zinc-950 dark:text-white flex items-center justify-center">
                             <CountUp
-                                from={0}
-                                to={6000}
+                                from={prevCount}
+                                to={followerCount}
                                 separator=","
                                 direction="up"
                                 duration={1.2}
