@@ -15,6 +15,16 @@ const teamMembers = [
     image: '../found.jpeg'
   },
   {
+    name: "Yash",
+    role: "Co-Founder & Coach",
+    college: "IIT Delhi",
+    initials: "KM",
+    color: "bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/20",
+    bio: "Hii, my name is Vivek and I am a BCA graduate.Being a part of UnmuteX has genuinely helped me improve my communication skills, self-confidence, and the way I structure my thoughts while speaking. The community sessions are engaging, interactive, and full of supportive people who genuinely encourage growth.really enjoy being a part of this community and I’m looking forward to staying consistent and growing even more with the team.",
+    tagline: "Structure your thoughts, command the room.",
+    image: '../c22.jpeg'
+  },
+  {
     name: "Vivek Yadav",
     role: "Co-Founder & Coach",
     college: "IIT Delhi",
@@ -74,16 +84,7 @@ const teamMembers = [
     tagline: "Fun prompts break ice faster than advice.",
     image: '../gritha.jpeg'
   },
-  {
-    name: "Sonali",
-    role: "Growth & Outreach Manager",
-    college: "Christ University",
-    initials: "AJ",
-    color: "bg-orange-500/10 text-orange-600 dark:text-orange-400 border-orange-500/20",
-    bio: "Aditya establishes partnerships with colleges and student bodies to host external debate tourneys.",
-    tagline: "Connecting voices, bridging communities.",
-    image: '../sonali.jpeg'
-  },
+  ,
 ];
 
 const leftMembers = teamMembers.slice(1, 4);   // Vivek, Naivedya, Nikhil
@@ -232,186 +233,103 @@ const AboutTeam = () => {
           </div>
 
           <div className="lg:col-span-7 space-y-6 sm:space-y-8 animate-fade-in-up" style={{ animationDelay: "200ms" }}>
-            <div>
-              <span className="text-[10px] uppercase font-bold tracking-widest text-zinc-400 dark:text-zinc-500 block mb-3">
-                {"Founder's Story"}
-              </span>
-              <h3 className="text-3xl sm:text-4xl font-bold text-zinc-955 dark:text-white tracking-tight mb-4 leading-snug">
-                {"\"We aren't here to teach you to be perfect. We are here to help you be real.\""}
-              </h3>
-              <p className="text-zinc-650 dark:text-zinc-400 text-sm sm:text-base font-light leading-relaxed mb-6">
-                UnmuteX was born from a very raw realization. Traditional speaking courses throw you into high-pressure setups or focus too much on vocabulary rules and posture. For someone struggling with hand shivering or social stutter, that is terrifying.
-                <br /><br />
-                I built UnmuteX as a safe haven. By pairing members in small, warm groups of 4 peers at matching skill levels, we erase judgment before you even unmute your microphone. Over 1,500 students have broken their silence through our batch system, and this is just the beginning.
-              </p>
-            </div>
-            <div className="flex flex-col sm:flex-row sm:items-center gap-6 pt-6 border-t border-zinc-100 dark:border-zinc-900">
-              <div>
-                <h4 className="text-sm font-bold text-zinc-955 dark:text-white mb-0.5">
-                  Shashwat Sharma
-                </h4>
-                <p className="text-[11px] text-zinc-400 dark:text-zinc-500 font-medium">
-                  Founder, Lead Coach & Facilitator
-                </p>
-              </div>
-              <div className="flex gap-3">
-                <a href="https://www.linkedin.com/company/unmutex/?viewAsMember=true" className="w-8 h-8 rounded-full bg-zinc-50 dark:bg-zinc-900 border border-zinc-200/60 dark:border-zinc-800 flex items-center justify-center text-zinc-500 hover:bg-zinc-955 hover:text-white dark:hover:bg-white dark:hover:text-zinc-950 transition duration-300">
-                  <FaLinkedin size={12} />
-                </a>
-                <a href="https://www.instagram.com/25shashwatt/" className="w-8 h-8 rounded-full bg-zinc-50 dark:bg-zinc-900 border border-zinc-200/60 dark:border-zinc-800 flex items-center justify-center text-zinc-500 hover:bg-zinc-955 hover:text-white dark:hover:bg-white dark:hover:text-zinc-950 transition duration-300">
-                  <FaInstagram size={12} />
-                </a>
-              </div>
-            </div>
-          </div>
+  <div>
+    <span className="text-[10px] uppercase font-bold tracking-widest text-zinc-400 dark:text-zinc-500 block mb-3">
+      Meet The Founder
+    </span>
+    <h3 className="text-3xl sm:text-4xl font-bold text-zinc-950 dark:text-white tracking-tight mb-4 leading-snug">
+      "Hi, I'm Shashwat."
+    </h3>
+    <p className="text-zinc-650 dark:text-zinc-400 text-sm sm:text-base font-light leading-relaxed mb-6">
+      There was a time when I knew exactly what I wanted to say, but couldn't express it confidently.
+      Like many students, I struggled with hesitation, overthinking, and the fear of being judged.
+      Even when I had ideas, I often stayed silent because I wasn't confident enough to speak up.
+      <br /><br />
+      Everything started changing when I stopped waiting to become perfect and simply started
+      practicing. One conversation, one discussion, one opportunity at a time. Over time, I realized
+      that confidence isn't something you're born with — it's something you build through consistency.
+      <br /><br />
+      That's why I started <strong>UnmuteX</strong> — a place where people can speak freely,
+      participate in meaningful activities, overcome hesitation, and grow into confident
+      communicators together. Because sometimes, all it takes is one safe space to finally find
+      your voice.
+    </p>
+  </div>
+  <div className="flex flex-col sm:flex-row sm:items-center gap-6 pt-6 border-t border-zinc-100 dark:border-zinc-900">
+    <div>
+      <h4 className="text-sm font-bold text-zinc-955 dark:text-white mb-0.5">
+        Shashwat Sharma
+      </h4>
+      <p className="text-[11px] text-zinc-400 dark:text-zinc-500 font-medium">
+        Founder, Lead Coach & Facilitator
+      </p>
+    </div>
+    <div className="flex gap-3">
+      <a href="https://www.linkedin.com/in/shashwat-sharma-b741aa311/" className="w-8 h-8 rounded-full bg-zinc-50 dark:bg-zinc-900 border border-zinc-200/60 dark:border-zinc-800 flex items-center justify-center text-zinc-500 hover:bg-zinc-955 hover:text-white dark:hover:bg-white dark:hover:text-zinc-950 transition duration-300">
+        <FaLinkedin size={12} />
+      </a>
+      <a href="https://www.instagram.com/25shashwatt/" className="w-8 h-8 rounded-full bg-zinc-50 dark:bg-zinc-900 border border-zinc-200/60 dark:border-zinc-800 flex items-center justify-center text-zinc-500 hover:bg-zinc-955 hover:text-white dark:hover:bg-white dark:hover:text-zinc-950 transition duration-300">
+        <FaInstagram size={12} />
+      </a>
+    </div>
+  </div>
+</div>
         </div>
 
         {/* ── Core Team: 3 | Center Text | 3 ── */}
-        <div className="mt-20 pt-16 border-t border-zinc-100 dark:border-zinc-900/60">
+        {/* ── Core Team ── */}
+<div className="mt-20 pt-16 border-t border-zinc-100 dark:border-zinc-900/60">
 
-          {/* Section header */}
-          <div className="text-center mb-14">
-            <h3 className="text-2xl font-bold text-zinc-950 dark:text-white tracking-tight mb-2">
-              About the Core Team
-            </h3>
-            <p className="text-zinc-400 dark:text-zinc-500 text-xs font-light">
-              Click any card to read their full profile
+  <div className="text-center mb-14">
+    <p className="text-[11px] uppercase tracking-[0.25em] text-zinc-400 dark:text-zinc-500 mb-3 font-bold">
+      Core Team
+    </p>
+    <h3 className="text-2xl font-bold text-zinc-950 dark:text-white tracking-tight mb-2">
+      The people behind UnmuteX
+    </h3>
+    <p className="text-zinc-400 dark:text-zinc-500 text-sm font-light">
+      A passionate group of youth mentors and builders committed to helping you speak without fear.
+    </p>
+  </div>
+
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 max-w-6xl mx-auto">
+    {teamMembers.slice(1).map((member) => (
+      <div
+        key={member.name}
+        className="bg-white dark:bg-zinc-900 border border-zinc-200/60 dark:border-zinc-800/60 rounded-2xl p-5 flex flex-col gap-4"
+      >
+        {/* Header: avatar + name/role */}
+        <div className="flex items-center gap-3">
+          <img
+            src={member.image}
+            alt={member.name}
+            className="w-14 h-14 rounded-full object-cover object-top border border-zinc-200 dark:border-zinc-700 flex-shrink-0"
+          />
+          <div>
+            <p className="text-sm font-semibold text-zinc-900 dark:text-white leading-tight">
+              {member.name}
             </p>
-          </div>
-
-          {/* 3-column layout: cards | divider | cards */}
-          <div className=" lg:grid-cols-[1fr_auto_1fr] gap-8 lg:gap-4 items-start max-w-2xl mx-auto">
-
-            {/* LEFT: 3 cards stacked */}
-            <div className="flex flex-col md:flex-row gap-5">
-              {leftMembers.map((member, idx) => (
-                <MemberCard key={member.name} member={member} idx={idx} />
-              ))}
-            </div>
-
-            {/* CENTER: Decorative vertical divider with text */}
-            <div className="hidden lg:flex items-center gap-5 px-6 w-full justify-center py-5">
-              {/* Left line */}
-              <div className="h-px flex-1 bg-gradient-to-r from-transparent via-zinc-300 dark:via-zinc-700 to-transparent" />
-
-              {/* Center badge */}
-              <div className="flex items-center gap-5 text-center">
-                {/* Icon ring */}
-                <div className="w-12 h-12 rounded-full border border-zinc-200 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-900 flex items-center justify-center shadow-sm">
-                  <FaMicrophone size={14} className="text-zinc-400 dark:text-zinc-500" />
-                </div>
-
-                {/* Horizontal label */}
-                <div className="flex flex-col items-center leading-none">
-                  <span className="text-[9px] uppercase tracking-[0.35em] font-bold text-zinc-300 dark:text-zinc-600">
-                    Core
-                  </span>
-                  <span className="text-[9px] uppercase tracking-[0.35em] font-bold text-zinc-400 dark:text-zinc-500">
-                    Members
-                  </span>
-                </div>
-
-                {/* Dot cluster */}
-                <div className="flex items-center gap-1.5">
-                  <div className="w-1 h-1 rounded-full bg-zinc-300 dark:bg-zinc-700" />
-                  <div className="w-1.5 h-1.5 rounded-full bg-zinc-400 dark:bg-zinc-600" />
-                  <div className="w-1 h-1 rounded-full bg-zinc-300 dark:bg-zinc-700" />
-                </div>
-              </div>
-
-              {/* Right line */}
-              <div className="h-px flex-1 bg-gradient-to-r from-transparent via-zinc-300 dark:via-zinc-700 to-transparent" />
-            </div>
-
-            {/* Mobile: simple horizontal rule with label */}
-            <div className="flex lg:hidden items-center gap-4 py-2">
-              <div className="flex-1 h-px bg-zinc-200 dark:bg-zinc-800" />
-              <span className="text-[9px] uppercase tracking-widest font-bold text-zinc-400 dark:text-zinc-600 whitespace-nowrap">
-                Core Members
-              </span>
-              <div className="flex-1 h-px bg-zinc-200 dark:bg-zinc-800" />
-            </div>
-
-            {/* RIGHT: 3 cards stacked */}
-            <div className="flex flex-col md:flex-row  gap-5">
-              {rightMembers.map((member, idx) => (
-                <MemberCard key={member.name} member={member} idx={idx} />
-              ))}
-            </div>
-
+           
           </div>
         </div>
+
+        {/* Tagline */}
+        <div className="text-[12px] italic text-zinc-500 dark:text-zinc-400 bg-zinc-50 dark:bg-zinc-950/50 border-l-2 border-zinc-200 dark:border-zinc-700 pl-3 py-1.5 rounded-r-lg leading-snug">
+          "{member.tagline}"
+        </div>
+
+        {/* Bio */}
+        <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed font-light">
+          {member.bio}
+        </p>
+      </div>
+    ))}
+  </div>
+</div>
 
       </div>
 
-      {/* Team Member Detail Pop-up Modal */}
-      {selectedMember && (
-        <div
-          onClick={() => setSelectedMember(null)}
-          className="absolute inset-0 z-[100] bg-zinc-950/60 dark:bg-black/85 backdrop-blur-md transition-all duration-300"
-        >
-          <div
-            onClick={(e) => e.stopPropagation()}
-            style={{
-              position: "absolute",
-              top: `${modalPos.top}px`,
-              left: `${modalPos.left}px`,
-              width: `${modalPos.width}px`
-            }}
-            className="max-h-[90vh] overflow-y-auto bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-[2.5rem] p-8 sm:p-10 shadow-[0_40px_90px_rgba(0,0,0,0.08)] dark:shadow-[0_40px_90px_rgba(0,0,0,0.6)] animate-genie"
-          >
-            <button
-              onClick={() => setSelectedMember(null)}
-              className="absolute top-6 right-6 w-8 h-8 rounded-full bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 text-zinc-500 dark:text-zinc-400 flex items-center justify-center transition cursor-pointer z-20"
-              aria-label="Close modal"
-            >
-              <FaTimes size={12} />
-            </button>
-
-            <div className="grid grid-cols-1 md:grid-cols-10 gap-8 items-stretch mt-4">
-              <div className="md:col-span-4 flex flex-col justify-between items-center text-center p-6 rounded-3xl bg-zinc-50 dark:bg-zinc-950/40 border border-zinc-100 dark:border-zinc-850">
-                <img src={selectedMember.image} alt="" className="h-full w-full object-cover rounded-2xl" />
-              </div>
-
-              <div className="md:col-span-6 flex flex-col justify-between">
-                <div>
-                  <span className="text-[9px] text-zinc-400 dark:text-zinc-500 font-bold uppercase tracking-widest block mb-1">
-                    Team Spotlight
-                  </span>
-                  <h3 className="text-2xl font-bold text-zinc-900 dark:text-white tracking-tight">
-                    {selectedMember.name}
-                  </h3>
-
-                  <div className="bg-zinc-50/50 dark:bg-zinc-950/20 border border-zinc-100 dark:border-zinc-800 rounded-2xl p-4 my-5 relative">
-                    <FaQuoteLeft className="text-zinc-200/50 dark:text-zinc-800/40 absolute top-3 left-3" size={16} />
-                    <blockquote className="relative z-10 pl-5 text-zinc-750 dark:text-zinc-200 text-[13px] font-normal italic leading-relaxed">
-                      &quot;{selectedMember.tagline}&quot;
-                    </blockquote>
-                  </div>
-
-                  <div className="space-y-2">
-                    <span className="text-[10px] font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-widest block">
-                      Journey and Feedback
-                    </span>
-                    <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 font-light leading-relaxed">
-                      {selectedMember.bio}
-                    </p>
-                  </div>
-                </div>
-
-                <div className="mt-8 pt-4 border-t border-zinc-100 dark:border-zinc-800 flex justify-end">
-                  <button
-                    onClick={() => setSelectedMember(null)}
-                    className="bg-zinc-950 dark:bg-white text-white dark:text-zinc-950 text-xs font-semibold px-6 py-2.5 rounded-full hover:bg-zinc-800 dark:hover:bg-zinc-100 active:scale-95 transition cursor-pointer"
-                  >
-                    Close Profile
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+      
 
     </section>
   );
