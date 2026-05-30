@@ -51,9 +51,7 @@ export default function Home() {
       </div>
       
       {/* Visual Impact Steps Roadmap */}
-      <div className="reveal-on-scroll">
-        <JourneySteps />
-      </div>
+      
       {/* <div className="reveal-on-scroll">
         <Problem />
       </div> */}
