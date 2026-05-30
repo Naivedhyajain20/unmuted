@@ -3,7 +3,7 @@ import CountUp from '../packages/CountUp'
 
 const Banner = () => {
     const [prevCount, setPrevCount] = useState(0);
-    const [followerCount, setFollowerCount] = useState(6733);
+    const [followerCount, setFollowerCount] = useState(6845);
 
     useEffect(() => {
         let isMounted = true;
@@ -25,8 +25,8 @@ const Banner = () => {
         // Initial fetch
         updateCount();
 
-        // Real-time polling every 15 seconds to sync dynamically!
-        const intervalId = setInterval(updateCount, 15000);
+        // Real-time polling every 60 seconds to sync dynamically!
+        const intervalId = setInterval(updateCount, 60000);
 
         return () => {
             isMounted = false;
