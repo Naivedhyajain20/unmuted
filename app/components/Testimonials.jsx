@@ -215,7 +215,7 @@ const Testimonials = () => {
                     </div>
                   </div>
 
-                  <blockquote className="text-zinc-600 dark:text-zinc-350 text-sm font-light leading-relaxed italic relative">
+                  <blockquote className="text-zinc-700 dark:text-zinc-200 text-sm font-normal leading-relaxed italic relative">
                     <span className="text-3xl text-zinc-200 dark:text-zinc-800 font-serif absolute -top-4 -left-2 select-none">“</span>
                     <span className="relative z-10 pl-4 block break-words">
                       {item.quote}

@@ -85,7 +85,7 @@ const Feedback = ({ onSuccess }) => {
       id="feedback"
       className="bg-white dark:bg-zinc-950 py-16 px-6 border-b border-zinc-100/60 dark:border-zinc-900/60 transition-colors duration-300"
     >
-      <Toaster position="top-right" />
+      <Toaster position="bottom-center" />
 
       <div className="max-w-7xl mx-auto">
         {/* Form Container */}
