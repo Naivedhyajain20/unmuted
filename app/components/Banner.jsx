@@ -8,18 +8,29 @@ const Banner = () => {
     useEffect(() => {
         let isMounted = true;
 
-        const updateCount = () => {
-            fetch(`/api/instagram?t=${Date.now()}`)
-                .then(res => res.json())
-                .then(data => {
-                    if (isMounted && data.followers) {
-                        setFollowerCount(prev => {
-                            setPrevCount(prev);
-                            return data.followers;
-                        });
-                    }
-                })
-                .catch(err => console.error("Instagram count sync error:", err));
+        const updateCount = async () => {
+            try {
+                const res = await fetch(`/api/instagram?t=${Date.now()}`);
+                if (!res.ok) {
+                    console.log("Instagram API returned non-OK status:", res.status);
+                    return;
+                }
+                const contentType = res.headers.get("content-type");
+                if (!contentType || !contentType.includes("application/json")) {
+                    console.log("Instagram API returned non-JSON content");
+                    return;
+                }
+                const data = await res.json();
+                if (isMounted && data && typeof data.followers === "number") {
+                    setFollowerCount(prev => {
+                        setPrevCount(prev);
+                        return data.followers;
+                    });
+                }
+            } catch (err) {
+                // Silently handle to prevent Next.js dynamic development overlays
+                console.log("Instagram sync status: Serving offline baseline count", err.message);
+            }
         };
 
         // Initial fetch

@@ -1,335 +1,403 @@
 "use client";
 
-import React, { useState } from "react";
-import { FaLinkedin, FaInstagram, FaTimes, FaGraduationCap, FaQuoteLeft, FaMicrophone } from "react-icons/fa";
+import React, { useState, useEffect } from "react";
+import { FaLinkedin, FaInstagram, FaQuoteLeft, FaChevronRight } from "react-icons/fa";
 
 const teamMembers = [
   {
     name: "Shashwat Sharma",
     role: "Founder & Lead Facilitator",
-    college: "SRCC, Delhi University",
-    initials: "AI",
-    color: "bg-rose-500/10 text-rose-600 dark:text-rose-400 border-rose-500/20",
-    bio: "Ananya started UnmuteX to solve a personal struggle with public speaking. She designs the speaking modules and runs the core community.",
+    college: "SOIT, RGPV University",
+    bio: "There was a time when I knew exactly what I wanted to say, but couldn't express it confidently. Like many students, I struggled with hesitation, overthinking, and the fear of being judged. Even when I had ideas, I often stayed silent because I wasn't confident enough to speak up. Everything started changing when I stopped waiting to become perfect and simply started practicing. One conversation, one discussion, one opportunity at a time. Over time, I realized that confidence isn't something you're born with — it's something you build through consistency. That's why I started UnmuteX — a place where people can speak freely, participate in meaningful activities, overcome hesitation, and grow into confident communicators together.",
     tagline: "Speak to express, not to impress.",
-    image: '../found.jpeg'
+    image: '../found.jpeg',
+    linkedin: "https://www.linkedin.com/in/shashwat-sharma-b741aa311/",
+    instagram: "https://www.instagram.com/25shashwatt/"
   },
   {
     name: "Yash",
     role: "Co-Founder & Coach",
-    college: "IIT Delhi",
-    initials: "KM",
-    color: "bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/20",
-    bio: "Hii, my name is Vivek and I am a BCA graduate.Being a part of UnmuteX has genuinely helped me improve my communication skills, self-confidence, and the way I structure my thoughts while speaking. The community sessions are engaging, interactive, and full of supportive people who genuinely encourage growth.really enjoy being a part of this community and I’m looking forward to staying consistent and growing even more with the team.",
+
+    bio: "Hii, my name is Yash. Being a part of UnmuteX has genuinely helped me improve my communication skills, self-confidence, and the way I structure my thoughts while speaking. The community sessions are engaging, interactive, and full of supportive people who genuinely encourage growth.",
     tagline: "Structure your thoughts, command the room.",
-    image: '../c22.jpeg'
+    image: '../c22.jpeg',
+    glowColor: "rgba(0, 240, 255, 0.85)", // Neon Cyan
+    shadowColor: "rgba(0, 240, 255, 0.4)",
+    textColor: "text-cyan-400",
+    glowClass: "bg-cyan-500/20",
+    linkedin: "#",
+    instagram: "#"
   },
   {
     name: "Vivek Yadav",
     role: "Co-Founder & Coach",
-    college: "IIT Delhi",
-    initials: "KM",
-    color: "bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/20",
-    bio: "Hii, my name is Vivek and I am a BCA graduate.Being a part of UnmuteX has genuinely helped me improve my communication skills, self-confidence, and the way I structure my thoughts while speaking. The community sessions are engaging, interactive, and full of supportive people who genuinely encourage growth.really enjoy being a part of this community and I’m looking forward to staying consistent and growing even more with the team.",
+    bio: "Hii, my name is Vivek and I am a BCA graduate. Being a part of UnmuteX has genuinely helped me improve my communication skills, self-confidence, and the way I structure my thoughts while speaking. The community sessions are engaging, interactive, and full of supportive people who genuinely encourage growth.",
     tagline: "Structure your thoughts, command the room.",
-    image: '../vivek.jpeg'
+    image: '../vivek.jpeg',
+    glowColor: "rgba(189, 0, 255, 0.85)", // Neon Violet
+    shadowColor: "rgba(189, 0, 255, 0.4)",
+    textColor: "text-purple-400",
+    glowClass: "bg-purple-500/20",
+    linkedin: "#",
+    instagram: "#"
   },
   {
     name: "Naivedya Jain",
     role: "Lead Community Builder",
-    college: "St. Stephen's College",
-    initials: "RS",
-    color: "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20",
-    bio: "Hii Myself Naivedhya Jain And Being a part of UnmuteX it has been a wonderful experience. In just a few weeks, I’ve noticed a positive change in my confidence and communication skills. The best part is the supportive and motivating environment, where everyone gets the chance to learn and improve. I’m grateful to be a part of this community and look forward to growing even more.",
+
+    bio: "Hii Myself Naivedhya Jain And Being a part of UnmuteX it has been a wonderful experience. In just a few weeks, I’ve noticed a positive change in my confidence and communication skills. The best part is the supportive and motivating environment, where everyone gets the chance to learn and improve.",
     tagline: "Belonging precedes confidence.",
-    image: '../naivedya.jpeg'
+    image: '../naivedya.jpeg',
+    glowColor: "rgba(0, 255, 102, 0.85)", // Neon Emerald
+    shadowColor: "rgba(0, 255, 102, 0.4)",
+    textColor: "text-emerald-400",
+    glowClass: "bg-emerald-500/20",
+    linkedin: "#",
+    instagram: "#"
   },
   {
     name: "Nikhil Kumar",
     role: "Head of Product & Tech",
-    college: "BITS Pilani",
-    initials: "DP",
-    color: "bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/20",
-    bio: "Joining UnmuteX has genuinely helped me grow as a communicator. Over time, I’ve noticed a big improvement in my confidence, articulation, and the way I express my thoughts. Earlier, I used to hesitate while speaking, but this community gave me a comfortable space to practice and improve consistently. The sessions, interactions, and supportive environment really pushed me to become more confident in conversations and public speaking. Grateful to be part of such a positive learning community.",
+
+    bio: "Joining UnmuteX has genuinely helped me grow as a communicator. Over time, I’ve noticed a big improvement in my confidence, articulation, and the way I express my thoughts. Earlier, I used to hesitate while speaking, but this community gave me a comfortable space to practice and improve consistently.",
     tagline: "Code that empowers community voices.",
-    image: '../nik.png'
+    image: '../nik.png',
+    glowColor: "rgba(255, 144, 0, 0.85)", // Neon Orange
+    shadowColor: "rgba(255, 144, 0, 0.4)",
+    textColor: "text-orange-400",
+    glowClass: "bg-orange-500/20",
+    linkedin: "#",
+    instagram: "#"
   },
   {
     name: "Akriti",
     role: "Creative & Brand Lead",
-    college: "NID Ahmedabad",
-    initials: "ID",
-    color: "bg-purple-500/10 text-purple-600 dark:text-purple-400 border-purple-500/20",
-    bio: "Hello, I am Akriti.Being a part of the UnmuteX community has greatly improved my confidence and speaking skills. The environment here is so friendly and encouraging that I never felt judged while expressing my thoughts and opinions. This platform has helped me become more confident, articulate, and comfortable while speaking in front of others. I am truly grateful to this community for helping me grow both personally and professionally.",
+
+    bio: "Hello, I am Akriti. Being a part of the UnmuteX community has greatly improved my confidence and speaking skills. The environment here is so friendly and encouraging that I never felt judged while expressing my thoughts and opinions.",
     tagline: "Good design makes hard skills approachable.",
-    image: '../akriti.jpeg'
+    image: '../akriti.jpeg',
+    glowColor: "rgba(255, 0, 122, 0.85)", // Neon Pink
+    shadowColor: "rgba(255, 0, 122, 0.4)",
+    textColor: "text-pink-400",
+    glowClass: "bg-pink-500/20",
+    linkedin: "#",
+    instagram: "#"
   },
   {
     name: "Chhavi",
     role: "Mentorship Coordinator",
-    college: "Ashoka University",
-    initials: "ZK",
-    color: "bg-teal-500/10 text-teal-600 dark:text-teal-400 border-teal-500/20",
-    bio: "UnmuteX has helped me improve my communication skills, self confidence and structuring my thoughts properly. The community sessions are amazing, people are really considerate and supportive. Loved to be a part of the team and will stay consistent with it!",
+
+    bio: "UnmuteX has helped me improve my communication skills, self confidence and structuring my thoughts properly. The community sessions are amazing, people are really considerate and supportive.",
     tagline: "Constructive feedback heals stage anxiety.",
-    image: '../chavi.jpeg'
+    image: '../chavi.jpeg',
+    glowColor: "rgba(0, 245, 212, 0.85)", // Neon Turquoise
+    shadowColor: "rgba(0, 245, 212, 0.4)",
+    textColor: "text-teal-400",
+    glowClass: "bg-teal-500/20",
+    linkedin: "#",
+    instagram: "#"
   },
   {
     name: "Grita",
     role: "Workshop Director",
-    college: "Lady Shri Ram College",
-    initials: "MN",
-    color: "bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border-indigo-500/20",
-    bio: "Hii my name is Grita Lamba Unmute X has helped me improve my confidence and communication skills . Everyome is so cooperative and encouragin here .enjoy being the part of this community",
+
+    bio: "Hii my name is Grita Lamba Unmute X has helped me improve my confidence and communication skills. Everyone is so cooperative and encouraging here. enjoy being the part of this community.",
     tagline: "Fun prompts break ice faster than advice.",
-    image: '../gritha.jpeg'
-  },
-  ,
+    image: '../gritha.jpeg',
+    glowColor: "rgba(255, 222, 0, 0.85)", // Neon Gold/Yellow
+    shadowColor: "rgba(255, 222, 0, 0.4)",
+    textColor: "text-yellow-400",
+    glowClass: "bg-yellow-500/20",
+    linkedin: "#",
+    instagram: "#"
+  }
 ];
 
-const leftMembers = teamMembers.slice(1, 4);   // Vivek, Naivedya, Nikhil
-const rightMembers = teamMembers.slice(4, 7);  // Gritha, Akriti, Chhavi
+const founder = teamMembers[0];
+const coreMembers = teamMembers.slice(1);
 
 const AboutTeam = () => {
-  const [selectedMember, setSelectedMember] = useState(null);
-  const [modalPos, setModalPos] = useState({ top: 0, left: 0, width: 360 });
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
 
-  const handleCardClick = (e, member) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const section = document.getElementById("about-team");
-    if (!section) return;
-
-    const sectionRect = section.getBoundingClientRect();
-
-    const cardLeft = rect.left - sectionRect.left;
-    const cardTop = rect.top - sectionRect.top;
-    const cardWidth = rect.width;
-    const cardHeight = rect.height;
-
-    const containerWidth = sectionRect.width;
-    const containerHeight = sectionRect.height;
-
-    const modalWidth = Math.min(672, containerWidth - 32);
-    const isMobile = containerWidth < 768;
-    const estimatedHeight = isMobile ? 580 : 480;
-
-    let calculatedLeft = cardLeft + cardWidth / 2 - modalWidth / 2;
-    if (calculatedLeft < 16) calculatedLeft = 16;
-    if (calculatedLeft + modalWidth > containerWidth - 16) {
-      calculatedLeft = containerWidth - modalWidth - 16;
-    }
-
-    let calculatedTop = cardTop + cardHeight / 2 - estimatedHeight / 2;
-    if (calculatedTop < 20) calculatedTop = 20;
-    if (calculatedTop + estimatedHeight > containerHeight - 20) {
-      calculatedTop = containerHeight - estimatedHeight - 20;
-    }
-    if (calculatedTop < 10) calculatedTop = 10;
-
-    setModalPos({ top: calculatedTop, left: calculatedLeft, width: modalWidth });
-    setSelectedMember(member);
-  };
-
-  const MemberCard = ({ member }) => (
-    <div
-      onClick={(e) => handleCardClick(e, member)}
-      className="group relative rounded-[1.6rem] overflow-hidden cursor-pointer bg-zinc-100 dark:bg-zinc-900 border border-zinc-200/60 dark:border-zinc-800/60 shadow-sm hover:shadow-[0_24px_50px_rgba(0,0,0,0.10)] dark:hover:shadow-[0_24px_50px_rgba(0,0,0,0.45)] hover:-translate-y-1.5 transition-all duration-300"
-      style={{ width: '100%' }}
-    >
-      {/* Image — tall, fills most of the card */}
-      <div className="relative w-full" style={{ aspectRatio: '1/1' }}>
-        <img
-          src={member.image}
-          alt={member.name}
-          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-        />
-        {/* Gradient scrim at bottom for legibility */}
-        <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-zinc-950/20 to-transparent" />
-
-        {/* Role pill — top left */}
-        <div className="absolute top-3 left-3">
-          
-        </div>
-
-        {/* Voice bars — bottom of image, subtle */}
-        <div className="absolute bottom-[72px] left-4 right-4 flex justify-start items-end gap-[3px] h-4 opacity-40 select-none">
-          {[2, 4, 3, 5, 2, 4, 3].map((h, i) => (
-            <span
-              key={i}
-              className="w-[3px] bg-white rounded-full animate-pulse"
-              style={{ height: `${h * 3}px`, animationDelay: `${i * 0.15}s` }}
-            />
-          ))}
-        </div>
-
-        {/* Name + tagline overlay at bottom of image */}
-        <div className="absolute bottom-0 left-0 right-0 px-4 pb-4 pt-8">
-          <h4 className="text-sm font-bold text-white tracking-tight leading-tight mb-0.5">
-            {member.name}
-          </h4>
-          <p className="text-[10px] text-white/60 font-light leading-snug line-clamp-1 italic">
-            &quot;{member.tagline}&quot;
-          </p>
-        </div>
-      </div>
-
-      {/* Footer strip — college tag */}
-      <div className="px-4 py-2.5 flex items-center justify-between bg-white dark:bg-zinc-900 border-t border-zinc-100 dark:border-zinc-800/60">
-      
-        <span className="text-[8px] uppercase font-bold tracking-widest text-zinc-300 dark:text-zinc-700 ml-2 shrink-0">
-          View ↗
-        </span>
-      </div>
-    </div>
-  );
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
-    <section id="about-team" className="bg-gradient-to-b from-zinc-50/50 via-white to-zinc-50/50 dark:from-zinc-950 dark:via-zinc-950 dark:to-zinc-950 py-16 px-6 border-b border-zinc-100/60 dark:border-zinc-900/60 transition-all duration-300 overflow-hidden relative">
+    <section className="bg-zinc-950 text-white py-24 px-6 overflow-hidden relative border-b border-zinc-900">
 
-      <div className="max-w-7xl mx-auto">
+      {/* Dynamic Soundwaves background decorative overlay */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.02),transparent_70%)] pointer-events-none" />
 
-        {/* Title Heading */}
-        <div className="text-center max-w-3xl mx-auto mb-20 animate-fade-in-up">
-          <p className="text-[11px] uppercase tracking-[0.25em] text-zinc-400 dark:text-zinc-500 mb-4 font-bold">
-            The Hearts Behind UnmuteX
-          </p>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.1] text-zinc-950 dark:text-white tracking-tight mb-6">
-            Meet Our Founder<br />
-            <span className="text-zinc-900 dark:text-zinc-300 font-light">
-              & Core Team
-            </span>
-          </h2>
-          <p className="text-base sm:text-lg text-zinc-500 dark:text-zinc-400 font-light leading-relaxed">
-            A passionate group of youth mentors, debate champions, and technology builders committed to helping you speak without fear.
-          </p>
-        </div>
+      <div className="max-w-7xl mx-auto relative z-10">
 
-        {/* Founder Spotlights split layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center mb-28 max-w-5xl mx-auto">
+        {/* 1. FOUNDER SPOTLIGHT (REMAINS STATIC & PREMIUM AS REQUESTED) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center mb-36 max-w-5xl mx-auto">
 
-          <div className="lg:col-span-5 animate-fade-in-up">
-            <div className="relative group max-w-md mx-auto aspect-square sm:aspect-[4/5] rounded-[3rem] overflow-hidden bg-zinc-900 border border-zinc-100 dark:border-zinc-800 shadow-[0_30px_60px_rgba(0,0,0,0.02)] dark:shadow-[0_30px_60px_rgba(0,0,0,0.4)]">
+          <div className="lg:col-span-5">
+            <div className="relative group max-w-md mx-auto aspect-square sm:aspect-[4/5] rounded-[3rem] overflow-hidden bg-zinc-900 border border-zinc-800 shadow-[0_30px_60px_rgba(0,0,0,0.5)]">
               <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent z-10" />
+
               <div className="absolute inset-0 flex flex-col justify-end p-8 sm:p-10 z-20 text-white">
-                <span className="text-[10px] uppercase font-bold tracking-widest text-zinc-400 mb-2">
-                  Founder & Lead Facilitator
+                <span className="text-[10px] uppercase font-bold tracking-widest text-zinc-500 mb-2">
+                  Founder &amp; Lead Facilitator
                 </span>
                 <h3 className="text-2xl font-bold tracking-tight mb-1">
-                  Shashwat Sharma
+                  {founder.name}
                 </h3>
-                <p className="text-xs text-zinc-350 font-light">
+                <p className="text-xs text-zinc-400 font-light">
                   SOIT, RGPV University
                 </p>
               </div>
-              <div className="w-full h-full bg-gradient-to-br from-zinc-800 to-zinc-950 flex items-center justify-center select-none">
-                <div className="text-center">
-                  <div className="w-full h-full rounded overflow-hidden bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center mx-auto shadow-inner mb-4">
-                    <img src="../found.jpeg" alt="Founder" className="w-full h-full object-cover" />
-                  </div>
-                  <span className="text-zinc-500 text-xs tracking-wider block">UNMUTEX PORTRAIT</span>
-                </div>
+
+              <div className="w-full h-full rounded overflow-hidden">
+                <img
+                  src={founder.image}
+                  alt={founder.name}
+                  className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                />
               </div>
             </div>
           </div>
 
-          <div className="lg:col-span-7 space-y-6 sm:space-y-8 animate-fade-in-up" style={{ animationDelay: "200ms" }}>
-  <div>
-    <span className="text-[10px] uppercase font-bold tracking-widest text-zinc-400 dark:text-zinc-500 block mb-3">
-      Meet The Founder
-    </span>
-    <h3 className="text-3xl sm:text-4xl font-bold text-zinc-950 dark:text-white tracking-tight mb-4 leading-snug">
-      "Hi, I'm Shashwat."
-    </h3>
-    <p className="text-zinc-650 dark:text-zinc-400 text-sm sm:text-base font-light leading-relaxed mb-6">
-      There was a time when I knew exactly what I wanted to say, but couldn't express it confidently.
-      Like many students, I struggled with hesitation, overthinking, and the fear of being judged.
-      Even when I had ideas, I often stayed silent because I wasn't confident enough to speak up.
-      <br /><br />
-      Everything started changing when I stopped waiting to become perfect and simply started
-      practicing. One conversation, one discussion, one opportunity at a time. Over time, I realized
-      that confidence isn't something you're born with — it's something you build through consistency.
-      <br /><br />
-      That's why I started <strong>UnmuteX</strong> — a place where people can speak freely,
-      participate in meaningful activities, overcome hesitation, and grow into confident
-      communicators together. Because sometimes, all it takes is one safe space to finally find
-      your voice.
-    </p>
-  </div>
-  <div className="flex flex-col sm:flex-row sm:items-center gap-6 pt-6 border-t border-zinc-100 dark:border-zinc-900">
-    <div>
-      <h4 className="text-sm font-bold text-zinc-955 dark:text-white mb-0.5">
-        Shashwat Sharma
-      </h4>
-      <p className="text-[11px] text-zinc-400 dark:text-zinc-500 font-medium">
-        Founder, Lead Coach & Facilitator
-      </p>
-    </div>
-    <div className="flex gap-3">
-      <a href="https://www.linkedin.com/in/shashwat-sharma-b741aa311/" className="w-8 h-8 rounded-full bg-zinc-50 dark:bg-zinc-900 border border-zinc-200/60 dark:border-zinc-800 flex items-center justify-center text-zinc-500 hover:bg-zinc-955 hover:text-white dark:hover:bg-white dark:hover:text-zinc-950 transition duration-300">
-        <FaLinkedin size={12} />
-      </a>
-      <a href="https://www.instagram.com/25shashwatt/" className="w-8 h-8 rounded-full bg-zinc-50 dark:bg-zinc-900 border border-zinc-200/60 dark:border-zinc-800 flex items-center justify-center text-zinc-500 hover:bg-zinc-955 hover:text-white dark:hover:bg-white dark:hover:text-zinc-950 transition duration-300">
-        <FaInstagram size={12} />
-      </a>
-    </div>
-  </div>
-</div>
-        </div>
+          <div className="lg:col-span-7 space-y-6 sm:space-y-8">
+            <div>
+              <span className="text-[10px] uppercase font-bold tracking-widest text-zinc-500 block mb-3">
+                Meet The Founder
+              </span>
+              <h3 className="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-4 leading-snug">
+                &quot;Hi, I&apos;m Shashwat.&quot;
+              </h3>
+              <p className="text-zinc-400 text-sm sm:text-base font-light leading-relaxed mb-6">
+                There was a time when I knew exactly what I wanted to say, but couldn&apos;t express it confidently.
+                Like many students, I struggled with hesitation, overthinking, and the fear of being judged.
+                Even when I had ideas, I often stayed silent because I wasn&apos;t confident enough to speak up.
+                <br /><br />
+                Everything started changing when I stopped waiting to become perfect and simply started
+                practicing. One conversation, one discussion, one opportunity at a time. Over time, I realized
+                that confidence isn&apos;t something you&apos;re born with — it&apos;s something you build through consistency.
+                <br /><br />
+                That&apos;s why I started <strong>UnmuteX</strong> — a place where people can speak freely,
+                participate in meaningful activities, overcome hesitation, and grow into confident
+                communicators together. Because sometimes, all it takes is one safe space to finally find
+                your voice.
+              </p>
+            </div>
 
-        {/* ── Core Team: 3 | Center Text | 3 ── */}
-        {/* ── Core Team ── */}
-<div className="mt-20 pt-16 border-t border-zinc-100 dark:border-zinc-900/60">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-6 pt-6 border-t border-zinc-900">
+              <div>
+                <h4 className="text-sm font-bold text-white mb-0.5">
+                  {founder.name}
+                </h4>
+                <p className="text-[11px] text-zinc-500 font-medium">
+                  {founder.role}
+                </p>
+              </div>
 
-  <div className="text-center mb-14">
-    <p className="text-[11px] uppercase tracking-[0.25em] text-zinc-400 dark:text-zinc-500 mb-3 font-bold">
-      Core Team
-    </p>
-    <h3 className="text-2xl font-bold text-zinc-950 dark:text-white tracking-tight mb-2">
-      The people behind UnmuteX
-    </h3>
-    <p className="text-zinc-400 dark:text-zinc-500 text-sm font-light">
-      A passionate group of youth mentors and builders committed to helping you speak without fear.
-    </p>
-  </div>
-
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 max-w-6xl mx-auto">
-    {teamMembers.slice(1).map((member) => (
-      <div
-        key={member.name}
-        className="bg-white dark:bg-zinc-900 border border-zinc-200/60 dark:border-zinc-800/60 rounded-2xl p-5 flex flex-col gap-4"
-      >
-        {/* Header: avatar + name/role */}
-        <div className="flex items-center gap-3">
-          <img
-            src={member.image}
-            alt={member.name}
-            className="w-14 h-14 rounded-full object-cover object-top border border-zinc-200 dark:border-zinc-700 flex-shrink-0"
-          />
-          <div>
-            <p className="text-sm font-semibold text-zinc-900 dark:text-white leading-tight">
-              {member.name}
-            </p>
-           
+              <div className="flex gap-3">
+                <a
+                  href={founder.linkedin}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-8 h-8 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 hover:bg-white hover:text-zinc-950 transition duration-300"
+                >
+                  <FaLinkedin size={12} />
+                </a>
+                <a
+                  href={founder.instagram}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-8 h-8 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 hover:bg-white hover:text-zinc-950 transition duration-300"
+                >
+                  <FaInstagram size={12} />
+                </a>
+              </div>
+            </div>
           </div>
+
         </div>
 
-        {/* Tagline */}
-        <div className="text-[12px] italic text-zinc-500 dark:text-zinc-400 bg-zinc-50 dark:bg-zinc-950/50 border-l-2 border-zinc-200 dark:border-zinc-700 pl-3 py-1.5 rounded-r-lg leading-snug">
-          "{member.tagline}"
+        {/* 2. THE CHAMELEON PORTRAIT STAGE (THEME INSPIRED BY THE ATTACHED DESIGN MOCKUP) */}
+        <div className="mt-20 pt-16 border-t border-zinc-900">
+
+          {/* HEADER SPLIT ROW */}
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-end mb-16 max-w-6xl mx-auto">
+            <div className="md:col-span-8 space-y-2">
+              <span className="text-[10px] uppercase font-bold tracking-[0.3em] text-zinc-500 block">
+                [ OUR TEAM ]
+              </span>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter uppercase leading-none">
+                The people <br />
+                BEHIND UNMUTEX
+              </h2>
+            </div>
+            <div className="md:col-span-4 text-left md:text-right">
+              <p className="text-zinc-400 text-xs sm:text-sm font-light max-w-xs md:ml-auto leading-relaxed">
+                Our team is a mix of public speaking champions, debate coaches, and creative minds who design immersive voice experiences.
+              </p>
+            </div>
+          </div>
+
+          {/* Mobile swipe helper */}
+          <div className="flex lg:hidden items-center justify-center gap-2 text-[10px] text-zinc-500 uppercase font-bold tracking-[0.2em] mb-5">
+            <span>Swipe to explore</span>
+            <span className="animate-bounce-horizontal">↔</span>
+          </div>
+
+          {/* THE CURVED ILLUMINATED STAGE ROW (SWIPEABLE ON MOBILE) */}
+          <div
+            className="flex flex-row gap-4 lg:gap-3.5 overflow-x-auto lg:overflow-visible scrollbar-none snap-x snap-mandatory items-stretch justify-start lg:justify-center max-w-6xl mx-auto pt-6 px-6 -mx-6 lg:mx-auto lg:px-0 h-[415px] lg:h-[390px] scroll-smooth"
+            style={{ perspective: "1500px" }}
+          >
+            {coreMembers.map((member, index) => {
+              const isHovered = hoveredIndex === index;
+              const isActive = activeIndex === index;
+              const isFocused = isHovered || isActive;
+
+              // 3D stage curvature calculations based on card center positioning (disabled on mobile)
+              const delta = index - 3; // center index offset
+              const rotateY = delta * -3.5; // slight vertical curvature tilt
+              const translateZ = Math.abs(delta) * -8; // slight fallback curve depth
+
+              return (
+                <div
+                  key={member.name}
+                  onMouseEnter={() => setHoveredIndex(index)}
+                  onMouseLeave={() => setHoveredIndex(null)}
+                  onClick={() => setActiveIndex(activeIndex === index ? null : index)}
+                  className={`relative cursor-pointer overflow-hidden rounded-[1.8rem] border transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] select-none h-full flex-shrink-0 snap-center ${isFocused
+                    ? "w-[285px] lg:w-[32%] border-white bg-zinc-900"
+                    : "w-[125px] lg:w-[13.5%] border-zinc-800 bg-zinc-950"
+                    }`}
+                  style={{
+                    transform: isMobile ? "none" : `rotateY(${rotateY}deg) translateZ(${translateZ}px)`,
+                    boxShadow: isFocused ? `0 25px 50px ${member.shadowColor}` : "none"
+                  }}
+                >
+
+                  {/* ILLUMINATED SOLID NEON DOORWAY PORTAL */}
+                  <div
+                    className="absolute inset-0 transition-opacity duration-700 pointer-events-none"
+                    style={{
+                      background: `linear-gradient(to bottom, ${member.glowColor}, rgba(0,0,0,0.95))`,
+                      opacity: isFocused ? 0.95 : 0.08
+                    }}
+                  />
+
+                  {/* BOTTOM WATER MIRROR REFLECTION */}
+                  <div
+                    className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black to-transparent pointer-events-none z-20 opacity-90 transition-opacity duration-500"
+                  />
+
+                  {/* STYLISH BACKLIT PHOTO */}
+                  <div className="absolute inset-0 w-full h-full z-10 transition-transform duration-700 ease-out group">
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className={`w-full h-full object-cover object-top transition-all duration-700 ease-out ${isFocused
+                        ? "brightness-[0.9] contrast-[1.05] scale-102 saturate-[1.0]"
+                        : "brightness-[0.6] contrast-[0.95] saturate-[0.8] opacity-75"
+                        }`}
+                    />
+
+                    {/* Shadow overlay block - lighter at the top to protect the face */}
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/85" />
+                  </div>
+
+                  {/* GLOWING NAME BADGE & DETAILS GRID */}
+                  <div className="absolute inset-0 p-6 flex flex-col justify-end z-30 pointer-events-none">
+
+                    {/* BOTTOM PERSISTENT INFO BOX (FACES ARE AT THE TOP, PROTECTED & TEXT-FREE) */}
+                    <div className="space-y-2">
+
+                      {/* Interactive soundbars to simulate voice coaching */}
+                      {isFocused && (
+                        <div className="flex gap-[3px] items-end h-2.5 select-none mb-2 animate-pulse">
+                          {[1, 2, 3, 4, 3, 2, 1].map((bar, idx) => (
+                            <span
+                              key={idx}
+                              className="w-[2px] bg-white rounded-full"
+                              style={{
+                                height: `${bar * 2.5}px`,
+                                animation: "dynamicPulseWave 0.8s infinite ease-in-out",
+                                animationDelay: `${idx * 0.1}s`
+                              }}
+                            />
+                          ))}
+                        </div>
+                      )}
+
+                      <h4 className="text-base font-black tracking-tight text-white uppercase leading-none">
+                        {member.name}
+                      </h4>
+
+                      <p className={`text-[9.5px] font-bold uppercase tracking-wider ${member.textColor} leading-tight`}>
+                        {member.role}
+                      </p>
+
+                      {/* Expandable details showing ONLY at the bottom of the card on hover/focus */}
+                      <div
+                        className={`transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] transform origin-bottom overflow-hidden ${isFocused
+                          ? "opacity-100 max-h-[160px] translate-y-0 mt-3 pt-3 border-t border-white/10"
+                          : "opacity-0 max-h-0 translate-y-4 pointer-events-none"
+                          }`}
+                      >
+
+
+                        <p className="text-[10px] italic font-light text-white/70 mt-1.5 leading-snug line-clamp-1">
+                          &quot;{member.tagline}&quot;
+                        </p>
+
+                        <p className="text-[10px] text-zinc-300 font-light mt-1.5 leading-relaxed line-clamp-3">
+                          {member.bio}
+                        </p>
+                      </div>
+                    </div>
+
+                  </div>
+
+                </div>
+              );
+            })}
+          </div>
+
+          {/* DYNAMIC WATER REFLECTION STAGE LINE */}
+          <div className="w-full max-w-6xl mx-auto h-[1px] bg-gradient-to-r from-transparent via-zinc-800 to-transparent mt-8" />
+          <div className="w-full max-w-5xl mx-auto h-[20px] bg-gradient-to-b from-zinc-900/10 to-transparent blur-md" />
+
         </div>
 
-        {/* Bio */}
-        <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed font-light">
-          {member.bio}
-        </p>
-      </div>
-    ))}
-  </div>
-</div>
-
       </div>
 
-      
+      {/* Embedded Dynamic sound waves animation for center focused voice indicators */}
+      <style dangerouslySetInnerHTML={{
+        __html: `
+        @keyframes dynamicPulseWave {
+          0%, 100% { transform: scaleY(0.25); }
+          50% { transform: scaleY(1); }
+        }
+        @keyframes bounceHorizontal {
+          0%, 100% { transform: translateX(-3px); }
+          50% { transform: translateX(3px); }
+        }
+        .animate-bounce-horizontal {
+          animation: bounceHorizontal 1.2s infinite ease-in-out;
+        }
+        .scrollbar-none::-webkit-scrollbar {
+          display: none;
+        }
+        .scrollbar-none {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      ` }} />
 
     </section>
   );
