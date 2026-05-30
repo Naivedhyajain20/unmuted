@@ -378,13 +378,13 @@ const AboutTeam = () => {
                   <span className="text-[9px] text-zinc-400 dark:text-zinc-500 font-bold uppercase tracking-widest block mb-1">
                     Team Spotlight
                   </span>
-                  <h3 className="text-2xl font-bold text-zinc-955 dark:text-white tracking-tight">
+                  <h3 className="text-2xl font-bold text-zinc-900 dark:text-white tracking-tight">
                     {selectedMember.name}
                   </h3>
 
-                  <div className="bg-zinc-50/50 dark:bg-zinc-955/20 border border-zinc-100 dark:border-zinc-850 rounded-2xl p-4 my-5 relative">
+                  <div className="bg-zinc-50/50 dark:bg-zinc-950/20 border border-zinc-100 dark:border-zinc-800 rounded-2xl p-4 my-5 relative">
                     <FaQuoteLeft className="text-zinc-200/50 dark:text-zinc-800/40 absolute top-3 left-3" size={16} />
-                    <blockquote className="relative z-10 pl-5 text-zinc-650 dark:text-zinc-350 text-[13px] font-light italic leading-relaxed">
+                    <blockquote className="relative z-10 pl-5 text-zinc-750 dark:text-zinc-200 text-[13px] font-normal italic leading-relaxed">
                       &quot;{selectedMember.tagline}&quot;
                     </blockquote>
                   </div>
