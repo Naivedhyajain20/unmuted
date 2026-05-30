@@ -27,7 +27,7 @@ const Navbar = () => {
   };
 
   const navLinks = [
-    { href: "#problem", label: "The Problem" },
+   
     { href: "#features", label: "Features" },
     { href: "#testimonials", label: "Testimonials" },
     { href: "#feedback-list", label: "Feedback" },

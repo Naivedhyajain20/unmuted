@@ -7,7 +7,7 @@ const Features = () => {
 
         {/* Heading */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <p className="text-[11px] uppercase tracking-[0.25em] text-zinc-400 dark:text-zinc-500 mb-4 font-bold">
+          <p className="text-4xl p-4 uppercase tracking-[0.25em] text-zinc-400 dark:text-zinc-500 mb-4 font-bold">
             Why UnmuteX
           </p>
 
