@@ -4,17 +4,17 @@ import React, { useState, useRef, useEffect } from "react";
 const testimonials = [
   {
     id: 1,
-    name: "Chhavi",
+    name: "Dolly",
     role: "School Student",
-    video: "/videos/chhavi.mp4",
+    video: "/videos/dolly.mp4",
     quote:
       "I stopped fearing meetings. Within 3 weeks, I started speaking confidently at work.",
   },
   {
     id: 2,
-    name: "Vivek",
+    name: "Shanvi",
     role: "College Student",
-    video: "/videos/vivek.mp4",
+    video: "/videos/shanvi.mp4",
     quote:
       "UnmuteX helped me crack my placement interviews without freezing. The real-time live activities changed how I think and articulate under pressure.",
   },
@@ -28,9 +28,9 @@ const testimonials = [
   },
   {
     id: 4,
-    name: "Sonali",
+    name: "Sonia",
     role: "College Student",
-    video: "/videos/sonali.mp4",
+    video: "/videos/sonia.mp4",
     quote:
       "The live practice sessions changed everything. Being surrounded by supportive peers who are all trying to grow made me speak without hesitation.",
   },
@@ -41,6 +41,14 @@ const testimonials = [
     video: "/videos/akriti.mp4",
     quote:
       "The live practice sessions changed everything. Being surrounded by supportive peers who are all trying to grow made me speak without hesitation.",
+  },
+  {
+    id: 2,
+    name: "Vivek",
+    role: " Student",
+    video: "/videos/vivek.mp4",
+    quote:
+      "UnmuteX helped me crack my placement interviews without freezing. The real-time live activities changed how I think and articulate under pressure.",
   },
 ];
 
@@ -80,7 +88,8 @@ const Testimonials = () => {
       if (firstChild) {
         const cardWidth = firstChild.offsetWidth;
         const gap = 24; // gap-6 is 24px
-        const scrollAmount = direction === "left" ? -(cardWidth + gap) : (cardWidth + gap);
+        const scrollAmount =
+          direction === "left" ? -(cardWidth + gap) : cardWidth + gap;
         scrollRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
       }
     }
@@ -92,7 +101,10 @@ const Testimonials = () => {
       if (firstChild) {
         const cardWidth = firstChild.offsetWidth;
         const gap = 24;
-        scrollRef.current.scrollTo({ left: index * (cardWidth + gap), behavior: "smooth" });
+        scrollRef.current.scrollTo({
+          left: index * (cardWidth + gap),
+          behavior: "smooth",
+        });
       }
     }
   };
@@ -104,8 +116,13 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <section id="testimonials" className="bg-gradient-to-b from-zinc-50/50 via-white to-zinc-50/50 dark:from-zinc-950 dark:via-zinc-950 dark:to-zinc-950 py-16 px-6 border-b border-zinc-100/60 dark:border-zinc-900/60 transition-all duration-300 overflow-hidden relative">
-      <style dangerouslySetInnerHTML={{__html: `
+    <section
+      id="testimonials"
+      className="bg-gradient-to-b from-zinc-50/50 via-white to-zinc-50/50 dark:from-zinc-950 dark:via-zinc-950 dark:to-zinc-950 py-16 px-6 border-b border-zinc-100/60 dark:border-zinc-900/60 transition-all duration-300 overflow-hidden relative"
+    >
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
         .no-scrollbar::-webkit-scrollbar {
           display: none;
         }
@@ -113,7 +130,9 @@ const Testimonials = () => {
           -ms-overflow-style: none;
           scrollbar-width: none;
         }
-      `}} />
+      `,
+        }}
+      />
 
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
@@ -123,20 +142,21 @@ const Testimonials = () => {
           </p>
 
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.1] text-zinc-950 dark:text-white tracking-tight mb-6">
-            Real People.<br />
+            Real People.
+            <br />
             <span className="text-zinc-900 dark:text-zinc-300 font-light">
               Real Confidence.
             </span>
           </h2>
 
           <p className="text-base sm:text-lg text-zinc-500 dark:text-zinc-400 font-light leading-relaxed">
-            Watch how our members transformed from hesitant speakers into highly confident, articulate communicators.
+            Watch how our members transformed from hesitant speakers into highly
+            confident, articulate communicators.
           </p>
         </div>
 
         {/* Carousel Container Wrapper */}
         <div className="relative group/carousel max-w-5xl mx-auto px-0 md:px-8">
-          
           {/* Navigation Arrows (Visible only on desktop/laptops) */}
           <button
             onClick={() => scroll("left")}
@@ -148,8 +168,18 @@ const Testimonials = () => {
             } hidden md:flex`}
             aria-label="Previous testimonial"
           >
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2.5}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M15 19l-7-7 7-7"
+              />
             </svg>
           </button>
 
@@ -163,8 +193,18 @@ const Testimonials = () => {
             } hidden md:flex`}
             aria-label="Next testimonial"
           >
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2.5}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M9 5l7 7-7 7"
+              />
             </svg>
           </button>
 
@@ -176,7 +216,7 @@ const Testimonials = () => {
           >
             {testimonials.map((item, index) => (
               <div
-                key={item.id}
+                key={`${item.id}-${index}`}
                 className="w-[85vw] sm:w-[320px] shrink-0 snap-center rounded-[2.5rem] hover:shadow-xl hover:-translate-y-2 transition-all duration-500 animate-fade-in-up liquid-glass bg-white dark:bg-zinc-900/40 border border-zinc-100 dark:border-zinc-800/60 overflow-hidden"
                 style={{ animationDelay: `${index * 120}ms` }}
               >
@@ -216,7 +256,9 @@ const Testimonials = () => {
                   </div>
 
                   <blockquote className="text-zinc-700 dark:text-zinc-200 text-sm font-normal leading-relaxed italic relative">
-                    <span className="text-3xl text-zinc-200 dark:text-zinc-800 font-serif absolute -top-4 -left-2 select-none">“</span>
+                    <span className="text-3xl text-zinc-200 dark:text-zinc-800 font-serif absolute -top-4 -left-2 select-none">
+                      “
+                    </span>
                     <span className="relative z-10 pl-4 block break-words">
                       {item.quote}
                     </span>
@@ -241,7 +283,6 @@ const Testimonials = () => {
               />
             ))}
           </div>
-
         </div>
       </div>
     </section>
