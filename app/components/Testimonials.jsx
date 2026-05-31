@@ -42,14 +42,6 @@ const testimonials = [
     quote:
       "The live practice sessions changed everything. Being surrounded by supportive peers who are all trying to grow made me speak without hesitation.",
   },
-  {
-    id: 2,
-    name: "Vivek",
-    role: " Student",
-    video: "/videos/vivek.mp4",
-    quote:
-      "UnmuteX helped me crack my placement interviews without freezing. The real-time live activities changed how I think and articulate under pressure.",
-  },
 ];
 
 const Testimonials = () => {
@@ -161,11 +153,10 @@ const Testimonials = () => {
           <button
             onClick={() => scroll("left")}
             disabled={!canScrollLeft}
-            className={`absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full border flex items-center justify-center transition-all duration-300 shadow-md ${
-              canScrollLeft
+            className={`absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full border flex items-center justify-center transition-all duration-300 shadow-md ${canScrollLeft
                 ? "bg-white/80 dark:bg-zinc-900/80 border-zinc-200/80 dark:border-zinc-800/85 hover:bg-white dark:hover:bg-zinc-800 hover:scale-105 active:scale-95 cursor-pointer text-zinc-800 dark:text-zinc-100"
                 : "bg-zinc-50/40 dark:bg-zinc-950/40 border-zinc-100 dark:border-zinc-900 text-zinc-300 dark:text-zinc-700 pointer-events-none opacity-40"
-            } hidden md:flex`}
+              } hidden md:flex`}
             aria-label="Previous testimonial"
           >
             <svg
@@ -186,11 +177,10 @@ const Testimonials = () => {
           <button
             onClick={() => scroll("right")}
             disabled={!canScrollRight}
-            className={`absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full border flex items-center justify-center transition-all duration-300 shadow-md ${
-              canScrollRight
+            className={`absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full border flex items-center justify-center transition-all duration-300 shadow-md ${canScrollRight
                 ? "bg-white/80 dark:bg-zinc-900/80 border-zinc-200/80 dark:border-zinc-800/85 hover:bg-white dark:hover:bg-zinc-800 hover:scale-105 active:scale-95 cursor-pointer text-zinc-800 dark:text-zinc-100"
                 : "bg-zinc-50/40 dark:bg-zinc-950/40 border-zinc-100 dark:border-zinc-900 text-zinc-300 dark:text-zinc-700 pointer-events-none opacity-40"
-            } hidden md:flex`}
+              } hidden md:flex`}
             aria-label="Next testimonial"
           >
             <svg
@@ -274,11 +264,10 @@ const Testimonials = () => {
               <button
                 key={index}
                 onClick={() => scrollToSlide(index)}
-                className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                  activeIndex === index
+                className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${activeIndex === index
                     ? "w-6 bg-zinc-950 dark:bg-white"
                     : "w-2 bg-zinc-200 dark:bg-zinc-800 hover:bg-zinc-300 dark:hover:bg-zinc-700"
-                }`}
+                  }`}
                 aria-label={`Go to testimonial slide ${index + 1}`}
               />
             ))}
