@@ -115,8 +115,22 @@ const teamMembers = [
     textColor: "text-yellow-400",
     glowClass: "bg-yellow-500/20",
     linkedin: "#",
-    instagram: "#",
+    instagram: "#"
   },
+   {
+    name: "Sonali Sharma",
+    role: "Workshop Director",
+
+    bio:"From Procrastination to Progress. Hi, I'm Sonali. For years, I struggled with procrastination and self-doubt. I often delayed taking action, overthought simple decisions, and let valuable opportunities slip away because I wasn't confident enough to step forward. Joining UnmuteX changed that. Through consistent practice, constructive feedback, and a supportive community, I learned to overcome procrastination, communicate with confidence, and take action without waiting for the 'perfect' moment. Today, I am more confident in expressing my thoughts, embracing challenges, and making the most of every opportunity that comes my way.",
+    tagline: "Fun prompts break ice faster than advice.",
+    image: '../sonali.jpeg',
+    glowColor: "rgba(255, 222, 0, 0.85)", // Neon Gold/Yellow
+    shadowColor: "rgba(255, 222, 0, 0.4)",
+    textColor: "text-yellow-400",
+    glowClass: "bg-yellow-500/20",
+    linkedin: "#",
+    instagram: "#"
+  }
 ];
 
 const founder = teamMembers[0];
