@@ -12,24 +12,24 @@ const WhoFor = () => {
     <div className="flex flex-wrap md:-m-2 -m-1">
       <div className="flex flex-wrap w-1/2">
         <div className="md:p-2 p-1 w-1/2">
-          <img alt="gallery" className="w-full object-cover h-full object-center block" src="../c1.jpeg"/>
+          <img alt="gallery" className="w-full object-cover h-full object-center block" src="../p1.jpeg"/>
         </div>
         <div className="md:p-2 p-1 w-1/2">
-          <img alt="gallery" className="w-full object-cover h-full object-center block" src="../c2.jpeg"/>
+          <img alt="gallery" className="w-full object-cover h-full object-center block" src="../p2.png"/>
         </div>
         <div className="md:p-2 p-1 w-full">
-          <img alt="gallery" className="w-full h-full object-cover object-center block" src="../c3.jpeg"/>
+          <img alt="gallery" className="w-full h-full object-cover object-center block" src="../p3.jpeg"/>
         </div>
       </div>
       <div className="flex flex-wrap w-1/2">
         <div className="md:p-2 p-1 w-full">
-          <img alt="gallery" className="w-full h-full object-cover object-center block" src="../c5.jpeg"/>
+          <img alt="gallery" className="w-full h-full object-cover object-center block" src="../p5.jpeg"/>
         </div>
         <div className="md:p-2 p-1 w-1/2">
-          <img alt="gallery" className="w-full object-cover h-full object-center block" src="../c4.jpeg"/>
+          <img alt="gallery" className="w-full object-cover h-full object-center block" src="../p4.jpeg"/>
         </div>
         <div className="md:p-2 p-1 w-1/2">
-          <img alt="gallery" className="w-full object-cover h-full object-center block" src="../c6.jpeg"/>
+          <img alt="gallery" className="w-full object-cover h-full object-center block" src="../p6.png"/>
         </div>
       </div>
     </div>
