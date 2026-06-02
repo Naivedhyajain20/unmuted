@@ -72,7 +72,7 @@ const Banner = () => {
                     {/* Stat 2 */}
                     <div className="flex flex-col items-center justify-center px-4 pt-4 md:pt-0">
                         <span className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-zinc-950 dark:text-white">
-                            8 PM
+                            7 PM
                         </span>
                         <p className="text-[11px] sm:text-xs font-semibold text-zinc-400 dark:text-zinc-500 mt-3 uppercase tracking-widest">
                             Daily Live Sessions
