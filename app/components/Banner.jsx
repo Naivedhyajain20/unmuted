@@ -12,11 +12,8 @@ const getDynamicCount = () => {
   return baseCount + daysPassed * 70; // 50 per day increase
 };
 
-        return () => {
-            isMounted = false;
-            clearInterval(intervalId);
-        };
-    }, []);
+       const Banner = () => {
+  
 
     return (
         <section className="relative bg-white dark:bg-zinc-950 py-16 px-6 overflow-hidden transition-colors duration-300">
