@@ -4,154 +4,139 @@ import { useState } from "react";
 
 const steps = [
   {
-    num: "01",
+    stage: "Stage 1",
     title: "Join the Community",
-    sub: "Click to join",
     desc: "Join a supportive community focused on improving public speaking and confidence.",
-    icon: "👋",
-    accent: "text-[#534AB7]",
-    border: "border-[#534AB7]",
-    dotActive: "bg-[#EEEDFE]",
-    subColor: "text-[#7F77DD]",
-    ring: "ring-[#534AB7]",
+    stageColor: "text-[#534AB7]",
+    dotBorder: "border-[#534AB7]",
+    dotGlow: "hover:shadow-[0_0_0_4px_rgba(83,74,183,0.15)]",
+    cardHoverBorder: "hover:border-[#534AB7]/30",
+    side: "right",
   },
   {
-    num: "02",
+    stage: "Stage 2",
     title: "Record & Send Video",
-    sub: "Record and submit a video",
     desc: "Share a short introduction video to help us understand your speaking level.",
-    icon: "🎥",
-    accent: "text-[#BA7517]",
-    border: "border-[#BA7517]",
-    dotActive: "bg-[#FFF8EC]",
-    subColor: "text-[#BA7517]",
-    ring: "ring-[#BA7517]",
+    stageColor: "text-[#BA7517]",
+    dotBorder: "border-[#BA7517]",
+    dotGlow: "hover:shadow-[0_0_0_4px_rgba(186,117,23,0.15)]",
+    cardHoverBorder: "hover:border-[#BA7517]/30",
+    side: "left",
   },
   {
-    num: "03",
+    stage: "Stage 3",
     title: "Get Batched & Grouped",
-    sub: "You'll be assigned a batch",
-    desc: "Get matched with 4 peers at a similar speaking level.",
-    icon: "👥",
-    accent: "text-[#0F6E56]",
-    border: "border-[#0F6E56]",
-    dotActive: "bg-[#EAFBF2]",
-    subColor: "text-[#1D9E75]",
-    ring: "ring-[#0F6E56]",
+    desc: "Get matched with 4 peers at a similar speaking level for focused practice.",
+    stageColor: "text-[#0F6E56]",
+    dotBorder: "border-[#0F6E56]",
+    dotGlow: "hover:shadow-[0_0_0_4px_rgba(15,110,86,0.15)]",
+    cardHoverBorder: "hover:border-[#0F6E56]/30",
+    side: "right",
   },
   {
-    num: "04",
+    stage: "Stage 4",
     title: "Your Journey Starts",
-    sub: "Journey starts!",
-    desc: "Practice in live sessions, receive feedback, and build confidence.",
-    icon: "🚀",
-    accent: "text-[#993556]",
-    border: "border-[#993556]",
-    dotActive: "bg-[#FDEEF2]",
-    subColor: "text-[#D4537E]",
-    ring: "ring-[#993556]",
+    desc: "Practice in live sessions, receive feedback, and build lasting confidence.",
+    stageColor: "text-[#993556]",
+    dotBorder: "border-[#993556]",
+    dotGlow: "hover:shadow-[0_0_0_4px_rgba(153,53,86,0.15)]",
+    cardHoverBorder: "hover:border-[#993556]/30",
+    side: "left",
   },
 ];
 
 export default function JourneySteps() {
-  const [activeIndex, setActiveIndex] = useState(null);
+  const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
-    <section className="w-full pt-16 px-6 ">
-      <div className="max-w-4xl mx-auto">
+    <section className="w-full py-16 px-6 bg-white dark:bg-[#0a0a0a]">
+      <style>{`
+        @keyframes fadeUp {
+          from { opacity: 0; transform: translateY(20px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+        .step-item {
+          opacity: 0;
+          animation: fadeUp 0.5s ease forwards;
+        }
+        .step-item:nth-child(1) { animation-delay: 0.05s; }
+        .step-item:nth-child(2) { animation-delay: 0.15s; }
+        .step-item:nth-child(3) { animation-delay: 0.25s; }
+        .step-item:nth-child(4) { animation-delay: 0.35s; }
+      `}</style>
+
+      <div className="max-w-2xl mx-auto">
 
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-500 mb-4">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white tracking-tight">
             How it works
           </h2>
-
-          <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
             Your path to confident speaking
           </p>
         </div>
 
-        {/* Timeline — extra bottom padding so cards don't get clipped */}
-        <div className="relative pb-40 md:pb-50">
+        {/* Timeline */}
+        <div className="relative">
 
-          {/* Connector line */}
-          <div className="absolute top-[21px] left-[12.5%] right-[12.5%] h-px bg-gray-200 z-0" />
+          {/* Spine */}
+          <div className="absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2 bg-gray-200 dark:bg-gray-800" />
 
-          {/* Steps grid — overflow visible so cards escape the container */}
-          <div className="relative z-10 grid grid-cols-4 gap-4 overflow-visible">
-            {steps.map((step, i) => {
-              const isActive = activeIndex === i;
-              const flipCard = i >= 2;
+          {steps.map((step, i) => {
+            const isRight = step.side === "right";
+            const isHovered = hoveredIndex === i;
 
-              return (
+            return (
+              <div
+                key={i}
+                className={`step-item relative flex items-start mb-8 last:mb-0 ${
+                  isRight ? "flex-row" : "flex-row-reverse"
+                }`}
+                onMouseEnter={() => setHoveredIndex(i)}
+                onMouseLeave={() => setHoveredIndex(null)}
+              >
+                {/* Empty half */}
+                <div className="flex-1" />
+
+                {/* Dot */}
                 <div
-                  key={step.num}
-                  className="flex flex-col items-center overflow-visible"
-                  onMouseEnter={() => setActiveIndex(i)}
-                  onMouseLeave={() => setActiveIndex(null)}
-                >
-                  {/* Dot + Card wrapper */}
-                  <div className="relative flex flex-col items-center overflow-visible">
+                  className={`
+                    absolute left-1/2 -translate-x-1/2 top-[18px] w-3 h-3 rounded-full z-10
+                    bg-white dark:bg-[#0a0a0a] border-2 ${step.dotBorder}
+                    transition-all duration-250
+                    ${step.dotGlow}
+                    ${isHovered ? "scale-150" : "scale-100"}
+                  `}
+                />
 
-                    {/* Dot */}
-                    <button
-                      className={[
-                        "w-11 h-11 rounded-full border-2 flex items-center justify-center bg-white",
-                        "transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2",
-                        step.border,
-                        step.ring,
-                        isActive ? `scale-110 ${step.dotActive}` : "hover:scale-105",
-                      ].join(" ")}
-                      aria-label={`Step ${step.num}: ${step.title}`}
-                      onFocus={() => setActiveIndex(i)}
-                      onBlur={() => setActiveIndex(null)}
-                    >
-                      <span className="text-base leading-none">{step.icon}</span>
-                    </button>
-
-                    {/* Hover Card — positioned below dot, flipped for right-side steps */}
-                    <div
-                      role="tooltip"
-                      className={[
-                        "absolute top-14 w-56 rounded-2xl border border-gray-100 bg-white shadow-xl p-4 z-50",
-                        "transition-all duration-200",
-                        flipCard ? "right-0" : "left-0",
-                        isActive
-                          ? "opacity-100 translate-y-0 pointer-events-auto"
-                          : "opacity-0 translate-y-2 pointer-events-none",
-                      ].join(" ")}
-                    >
-                      <div className="text-2xl mb-3 leading-none">{step.icon}</div>
-
-                      <span className={`text-[10px] font-bold tracking-widest uppercase ${step.accent}`}>
-                        {step.num}
-                      </span>
-
-                      <h3 className="text-sm font-semibold text-gray-900 mt-1 mb-0.5 leading-snug">
-                        {step.title}
-                      </h3>
-
-                      <p className={`text-xs font-medium mb-2.5 ${step.subColor}`}>
-                        {step.sub}
-                      </p>
-
-                      <p className="text-xs text-gray-500 leading-relaxed">
-                        {step.desc}
-                      </p>
-                    </div>
+                {/* Card half */}
+                <div className={`flex-1 ${isRight ? "pl-7" : "pr-7 flex justify-end"}`}>
+                  <div
+                    className={`
+                      bg-white dark:bg-[#111]
+                      border border-gray-200 dark:border-gray-800
+                      ${step.cardHoverBorder}
+                      rounded-2xl p-4 w-full max-w-[280px]
+                      transition-all duration-250
+                      ${isHovered ? "-translate-y-1 shadow-lg dark:shadow-black/40" : "translate-y-0 shadow-none"}
+                    `}
+                  >
+                    <p className={`text-[10px] font-bold tracking-widest uppercase mb-1.5 ${step.stageColor}`}>
+                      {step.stage}
+                    </p>
+                    <p className="text-sm font-semibold text-gray-900 dark:text-white mb-1 leading-snug">
+                      {step.title}
+                    </p>
+                    <p className={`text-xs leading-relaxed transition-colors duration-250 ${isHovered ? "text-gray-600 dark:text-gray-400" : "text-gray-400 dark:text-gray-600"}`}>
+                      {step.desc}
+                    </p>
                   </div>
-
-                  {/* Label below dot */}
-                  <p className={`mt-3 text-[10px] font-bold tracking-widest uppercase ${step.accent}`}>
-                    {step.num}
-                  </p>
-                  <p className="mt-1 text-xs font-medium text-gray-700 text-center leading-snug px-1">
-                    {step.title}
-                  </p>
                 </div>
-              );
-            })}
-          </div>
+
+              </div>
+            );
+          })}
         </div>
 
       </div>
