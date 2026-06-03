@@ -7,7 +7,6 @@ import {
   FaQuoteLeft,
   FaChevronRight,
 } from "react-icons/fa";
-import JourneySteps from "./JourneySteps";
 
 const teamMembers = [
   {
@@ -159,7 +158,7 @@ const AboutTeam = () => {
             <h2 className="text-5xl sm:text-6xl md:text-7xl font-black tracking-tighter uppercase leading-none text-black dark:text-white mb-4">
               Meet The
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-300 to-zinc-600">
+              <span className="text-black dark:text-white bg-clip-text ">
                 Founders
               </span>
             </h2>
@@ -248,11 +247,7 @@ const AboutTeam = () => {
             })}
           </div>
         </div>
-
-        {/* ─── JOURNEY STEPS ─── */}
-        <div className="reveal-on-scroll">
-          <JourneySteps />
-        </div>
+        
 
         {/* ─── THEY STARTED JUST LIKE YOU ─── */}
         <div className="mt-20 pt-16 border-t border-zinc-900">

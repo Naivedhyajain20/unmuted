@@ -39,7 +39,7 @@ const Features = () => {
             </h3>
 
             <p className="text-zinc-500 dark:text-zinc-400 text-sm font-light leading-relaxed">
-              Join us Mon–Fri, 8 PM–9 PM. One focused hour of live, guided speaking practice every single evening.
+              Join us Mon–Fri, 7PM-8PM PM. One focused hour of live, guided speaking practice every single evening.
             </p>
           </div>
 
@@ -119,7 +119,7 @@ const Features = () => {
                       <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
                     </span>
                     <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest">
-                      Every Day Live at 8 PM
+                      Every Day Live at 7 PM
                     </span>
                   </div>
 

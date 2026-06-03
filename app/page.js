@@ -55,6 +55,9 @@ export default function Home() {
       {/* <div className="reveal-on-scroll">
         <Problem />
       </div> */}
+      <div className="reveal-on-scroll">
+          <JourneySteps />
+        </div>
      
       <div className="reveal-on-scroll">
         <AboutTeam />
