@@ -23,7 +23,7 @@ const teamMembers = [
     name: "Yash",
     role: "Co-Founder & Coach",
     college: "IIIT Bhubaneswar",
-    bio: "There was a time when I had opinions but lacked the courage to voice them. Speaking in front of others felt like stepping into unknown territory — uncomfortable, uncertain, and easy to avoid. Joining UnmuteX became the turning point. Practicing consistently, receiving honest feedback, and being surrounded by people who genuinely wanted to grow together changed the way I see communication. I stopped treating it as a performance and started treating it as a skill — one that anyone can build with the right environment. That belief is what drives me as a Co-Founder. I want every person who walks into UnmuteX to leave feeling more capable, more confident, and more themselves.",
+    bio: "Great ideas are buried every day simply because someone lacked the guts to speak up. I’ve seen it happen, and I’ve hustled hard enough to ensure it never happens to me.Building UnmuteX wasn’t just a startup idea; it was a necessity. Combining a tech-driven mindset with the fire of a debater, my goal as Co-Founder is clear: We don’t just teach you how to talk. We train you to claim your space. Stop surviving the conversation. Start commanding it.",
     tagline: "Structure your thoughts, command the room.",
     image: "../f2.jpeg",
     linkedin: "https://www.linkedin.com/in/yashvardhan-shrotriya-a1a263263/",
