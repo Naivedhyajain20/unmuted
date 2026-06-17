@@ -12,7 +12,7 @@ const Hero = () => {
       <div className="hidden dark:block absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <video
           className="absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-screen brightness-150"
-          src="/bg.mp4"
+          src="/bgg.mp4"
           autoPlay
           muted
           loop
