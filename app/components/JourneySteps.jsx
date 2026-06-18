@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const steps = [
   {
@@ -45,30 +45,104 @@ const steps = [
   },
 ];
 
+function StepItem({ step, index, hoveredIndex, setHoveredIndex }) {
+  const ref = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const isRight = step.side === "right";
+  const isHovered = hoveredIndex === index;
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2, rootMargin: "0px 0px -60px 0px" }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      className={`
+        relative flex items-start mb-10 last:mb-0
+        md:${isRight ? "flex-row" : "flex-row-reverse"}
+        flex-row
+        transition-all duration-700 ease-out
+        ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}
+      `}
+      style={{ transitionDelay: isVisible ? `${index * 90}ms` : "0ms" }}
+      onMouseEnter={() => setHoveredIndex(index)}
+      onMouseLeave={() => setHoveredIndex(null)}
+    >
+      {/* Dot — left-aligned on mobile, centered on desktop */}
+      <div
+        className={`
+          absolute z-10 w-3.5 h-3.5 rounded-full
+          bg-white dark:bg-[#0a0a0a] border-2 ${step.dotBorder}
+          transition-all duration-250
+          ${step.dotGlow}
+          ${isHovered ? "scale-150" : "scale-100"}
+          left-0 top-7
+          md:left-1/2 md:-translate-x-1/2
+        `}
+      />
+
+      {/* Mobile spacer to push card past the dot */}
+      <div className="w-7 md:hidden flex-shrink-0" />
+
+      {/* Desktop-only empty half for left-side cards */}
+      <div className={`hidden md:block ${isRight ? "" : "w-1/2"}`} />
+
+      {/* Card */}
+      <div
+        className={`
+          flex-1 md:w-1/2 md:flex-none
+          ${isRight ? "md:pl-8" : "md:pr-8 md:flex md:justify-end"}
+        `}
+      >
+        <div
+          className={`
+            bg-white dark:bg-[#111]
+            border border-gray-200 dark:border-gray-800
+            ${step.cardHoverBorder}
+            rounded-2xl p-5 md:p-7 w-full
+            transition-all duration-250
+            ${isHovered ? "md:-translate-y-1 shadow-lg dark:shadow-black/40" : "translate-y-0 shadow-none"}
+          `}
+        >
+          <p className={`text-[11px] md:text-xs font-bold tracking-widest uppercase mb-2 md:mb-2.5 ${step.stageColor}`}>
+            {step.stage}
+          </p>
+          <p className="text-lg md:text-xl font-semibold text-gray-900 dark:text-white mb-2 md:mb-2.5 leading-snug">
+            {step.title}
+          </p>
+          <p className={`text-sm md:text-base leading-relaxed transition-colors duration-250 ${isHovered ? "text-gray-600 dark:text-gray-400" : "text-gray-400 dark:text-gray-600"}`}>
+            {step.desc}
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function JourneySteps() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
     <section className="w-full py-16 px-6 bg-white dark:bg-[#0a0a0a]">
-      <style>{`
-        @keyframes fadeUp {
-          from { opacity: 0; transform: translateY(20px); }
-          to   { opacity: 1; transform: translateY(0); }
-        }
-        .step-item {
-          opacity: 0;
-          animation: fadeUp 0.5s ease forwards;
-        }
-        .step-item:nth-child(1) { animation-delay: 0.05s; }
-        .step-item:nth-child(2) { animation-delay: 0.15s; }
-        .step-item:nth-child(3) { animation-delay: 0.25s; }
-        .step-item:nth-child(4) { animation-delay: 0.35s; }
-      `}</style>
-
-      <div className="max-w-2xl mx-auto">
+      <div className="max-w-5xl mx-auto">
 
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-14">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white tracking-tight">
             How it works
           </h2>
@@ -80,63 +154,18 @@ export default function JourneySteps() {
         {/* Timeline */}
         <div className="relative">
 
-          {/* Spine */}
-          <div className="absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2 bg-gray-200 dark:bg-gray-800" />
+          {/* Spine — left-aligned on mobile, centered on desktop */}
+          <div className="absolute top-0 bottom-0 w-px bg-gray-200 dark:bg-gray-800 left-[6px] md:left-1/2 md:-translate-x-1/2" />
 
-          {steps.map((step, i) => {
-            const isRight = step.side === "right";
-            const isHovered = hoveredIndex === i;
-
-            return (
-              <div
-                key={i}
-                className={`step-item relative flex items-start mb-8 last:mb-0 ${
-                  isRight ? "flex-row" : "flex-row-reverse"
-                }`}
-                onMouseEnter={() => setHoveredIndex(i)}
-                onMouseLeave={() => setHoveredIndex(null)}
-              >
-                {/* Empty half */}
-                <div className="flex-1" />
-
-                {/* Dot */}
-                <div
-                  className={`
-                    absolute left-1/2 -translate-x-1/2 top-[18px] w-3 h-3 rounded-full z-10
-                    bg-white dark:bg-[#0a0a0a] border-2 ${step.dotBorder}
-                    transition-all duration-250
-                    ${step.dotGlow}
-                    ${isHovered ? "scale-150" : "scale-100"}
-                  `}
-                />
-
-                {/* Card half */}
-                <div className={`flex-1 ${isRight ? "pl-7" : "pr-7 flex justify-end"}`}>
-                  <div
-                    className={`
-                      bg-white dark:bg-[#111]
-                      border border-gray-200 dark:border-gray-800
-                      ${step.cardHoverBorder}
-                      rounded-2xl p-4 w-full max-w-[280px]
-                      transition-all duration-250
-                      ${isHovered ? "-translate-y-1 shadow-lg dark:shadow-black/40" : "translate-y-0 shadow-none"}
-                    `}
-                  >
-                    <p className={`text-[10px] font-bold tracking-widest uppercase mb-1.5 ${step.stageColor}`}>
-                      {step.stage}
-                    </p>
-                    <p className="text-sm font-semibold text-gray-900 dark:text-white mb-1 leading-snug">
-                      {step.title}
-                    </p>
-                    <p className={`text-xs leading-relaxed transition-colors duration-250 ${isHovered ? "text-gray-600 dark:text-gray-400" : "text-gray-400 dark:text-gray-600"}`}>
-                      {step.desc}
-                    </p>
-                  </div>
-                </div>
-
-              </div>
-            );
-          })}
+          {steps.map((step, i) => (
+            <StepItem
+              key={i}
+              step={step}
+              index={i}
+              hoveredIndex={hoveredIndex}
+              setHoveredIndex={setHoveredIndex}
+            />
+          ))}
         </div>
 
       </div>
